@@ -4,6 +4,8 @@ import Section2 from "./Section2";
 import SkillsChallenge from "./SkillsChallenge";
 import HackathonsSection from "./HackathonsSection";
 import SKillsChallengeBenefits from "./SkillsChallengeBenefits";
+import Testmonials from "./Testmonials";
+import HowToStart from "./HowToStart"
 
 export default function LandingPage() {
   return (
@@ -14,6 +16,9 @@ export default function LandingPage() {
       <SkillsChallenge />
       <HackathonsSection />
       <SKillsChallengeBenefits />
+      <Testmonials/>
+      <HowToStart/>
+      
     </div>
   );
 }
