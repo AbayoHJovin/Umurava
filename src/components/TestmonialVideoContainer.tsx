@@ -1,11 +1,4 @@
-// <div>
-//   <Image
-//     src="/testmonialThumbnail.png"
-//     width={50}
-//     height={50}
-//     alt="testmonial"
-//   />
-// </div>
+import workSans from "@/fonts/fonts";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 
@@ -24,7 +17,7 @@ type Props = {
 
 export default function TestmonialVideoContainer({ testimony }: Props) {
   return (
-    <div className="w-[332.8px] h-auto p-5 border-[1px] rounded-lg border-[#E4E7EC]">
+    <div className={`w-[332.8px] h-auto p-5 border-[1px] rounded-lg border-[#E4E7EC] ${workSans.className} `}>
       <div className="relative w-full h-32 mb-4">
         {/* Thumbnail */}
         <div className="relative w-full h-full bg-gray-100 rounded-lg overflow-hidden">

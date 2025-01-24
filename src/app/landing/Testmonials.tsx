@@ -1,71 +1,10 @@
-// import TestmonialVideoContainer from "@/components/TestmonialVideoContainer";
-
-// export default function Testmonials() {
-//   const testmonials = [
-//     {
-//       id: 1,
-//       witness: "Manzi Jack",
-//       role: "Product designer",
-//       location: "Kigali",
-//       profileImage: "https://picsum.photos/200",
-//       video: "",
-//       thumbnail: "/testmonialThumbnail.png",
-//     },
-//     {
-//       id: 1,
-//       witness: "Manzi Jack",
-//       role: "Product designer",
-//       location: "Kigali",
-//       profileImage: "https://picsum.photos/200",
-//       video: "",
-//       thumbnail: "/testmonialThumbnail.png",
-//     },
-//     {
-//       id: 1,
-//       witness: "Manzi Jack",
-//       role: "Product designer",
-//       location: "Kigali",
-//       profileImage: "https://picsum.photos/200",
-//       video: "",
-//       thumbnail: "/testmonialThumbnail.png",
-//     },
-//     {
-//       id: 1,
-//       witness: "Manzi Jack",
-//       role: "Product designer",
-//       location: "Kigali",
-//       profileImage: "https://picsum.photos/200",
-//       video: "",
-//       thumbnail: "/testmonialThumbnail.png",
-//     },
-//   ];
-//   return (
-//     <div className="container mx-auto">
-//       <div className="flex flex-col items-start">
-//         <h1 className={`text-black text-4xl font-bold`}>
-//           Users are in Love with Skills
-//           <span className="block">Challenges Program</span>
-//         </h1>{" "}
-//         <h1 className=" text-[#687588] my-3">
-//           See What our clients say about working with us. Their success
-//           <span className="ssm:block">
-//             speaks for our dedication and expertise{" "}
-//           </span>
-//         </h1>
-//       </div>
-//       {testmonials.map((testmony) => (
-//         <TestmonialVideoContainer testimony={testmony} />
-//       ))}
-//     </div>
-//   );
-// }
-
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import TestmonialVideoContainer from "@/components/TestmonialVideoContainer";
+import workSans from "@/fonts/fonts";
 
 export default function Testmonials() {
   const testmonials = [
@@ -126,16 +65,16 @@ export default function Testmonials() {
   ];
 
   return (
-    <div className="container mx-auto bg-white">
+    <div className={`container mx-auto bg-white ${workSans.className}`}>
       {/* Header */}
       <div className="flex flex-col items-start mb-6">
-        <h1 className="text-black text-4xl font-bold">
-          Users are in Love with Skills
-          <span className="block">Challenges Program</span>
+        <h1 className="text-black text-2xl md:text-4xl font-bold text-center md:text-start">
+          Users are in Love with Skills{" "}
+          <span className="inline md:block">Challenges Program</span>
         </h1>
-        <h1 className="text-[#687588] my-3">
+        <h1 className="text-[#687588] my-3 text-center md:text-start">
           See what our clients say about working with us. Their success
-          <span className="block">
+          <span className="inline md:block">
             speaks for our dedication and expertise.
           </span>
         </h1>

@@ -4,16 +4,18 @@ import StatsSection from "./components/Stats";
 
 export default function Section2() {
   return (
-    <div className="bg-gray-50">
-      <div className="flex flex-col  items-center text-center">
-        <h1 className={`text-black text-4xl font-bold ${workSans.variable}`}>
+    <div className={`bg-gray-50 `}>
+      <div
+        className={`flex flex-col ${workSans.className}  items-center text-center`}
+      >
+        <h1 className={`text-black text-2xl md:text-4xl font-bold`}>
           Experience a New Way of Building
-          <span className="block">Work Experience</span>
+          <span className="inline md:block"> Work Experience</span>
         </h1>
-        <h1 className="text-[#687588] text-lg">
+        <h1 className="text-[#687588] text-lg my-5 text-center md:text-start">
           Join Skills Challenge Program to accelerate your career growth and
-          become
-          <span className="block">
+          become{" "}
+          <span className="inline md:block">
             part of Africa's largest workforce of digital professionals.
           </span>
         </h1>

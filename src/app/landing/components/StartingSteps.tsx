@@ -1,3 +1,4 @@
+import workSans from "@/fonts/fonts";
 import Image from "next/image";
 
 type PropsDef = {
@@ -13,28 +14,25 @@ type Props = {
 
 export default function StartingSteps({ step }: Props) {
   return (
-    <div className="relative bg-white p-4 rounded-lg">
-      {/* Step Button */}
-      <button className="bg-[#2B71F0] text-white p-2 px-3 rounded-md">
-        step {step.number}
+    <div
+      className={`relative bg-white  p-6 rounded-lg flex flex-col justify-between h-full  ${workSans.className}`}
+    >
+      <button className="bg-[#2B71F0] text-white text-sm font-medium py-1 px-3 rounded-md self-start">
+        Step {step.number}
       </button>
 
-      {/* Step Name */}
-      <h1 className="text-black text-2xl font-bold">{step.stepName}</h1>
+      <h1 className="text-black text-lg font-bold mt-4">{step.stepName}</h1>
 
-      {/* Sub Name */}
-      <h1 className="text-[#000000] text-lg">{step.subName}</h1>
+      <p className="text-gray-600 text-sm mt-2">{step.subName}</p>
 
-      {/* Image Positioned in Bottom-Right */}
       {step.image && (
-        <div className="absolute bottom-2 right-2">
-          <Image
-            src={step.image}
-            objectFit="cover"
-            width={200} // Adjust width
-            height={200} // Adjust height
-            alt="step image"
-          />
+        <div className="mt-auto flex justify-end items-end">
+          <object
+            type="image/svg+xml"
+            data={step.image}
+            width={150}
+            height={100}
+          ></object>
         </div>
       )}
     </div>

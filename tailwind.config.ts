@@ -14,9 +14,10 @@ export default {
       ssm: "550px",
       sm: "640px",
       md: "768px",
+      lmd:"815px",
       xmd: "960px",
       lg: "1024px",
-      xlg: "1160px",
+      xlg: "1900",
     },
     extend: {
       colors: {

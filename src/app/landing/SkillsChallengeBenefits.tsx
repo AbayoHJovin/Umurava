@@ -3,14 +3,17 @@ import { AiFillTrophy } from "react-icons/ai";
 import { CgBriefcase, CgTrending, CgTrophy, CgUser } from "react-icons/cg";
 import { FiTrendingUp } from "react-icons/fi";
 import { FaMedal } from "react-icons/fa";
+import workSans from "@/fonts/fonts";
 
 export default function SKillsChallengeBenefits() {
   return (
-    <div className="bg-[#F9FAFB] py-10">
+    <div className={`${workSans.className} bg-[#F9FAFB] py-10`}>
       <div className="flex flex-col items-center justify-center">
-        <h1 className={`text-black text-4xl font-bold text-center`}>
-          What else can I gain from
-          <span className="block">participating in skills Challenges?</span>
+        <h1 className={`text-black text-2xl md:text-4xl font-bold text-center`}>
+          What else can I gain from{" "}
+          <span className="inline md:block">
+            participating in skills Challenges?
+          </span>
         </h1>{" "}
         <h1 className="text-center text-[#687588] my-3">
           Join Skills Challenges Program to accelerate your career growth and
@@ -84,7 +87,7 @@ export default function SKillsChallengeBenefits() {
             </div>
           </div>
         </div>
-        <div className="flex w-full">
+        <div className="hidden lg:flex w-full">
           <Image
             src={"/banner_image.png"}
             alt="challenges image"

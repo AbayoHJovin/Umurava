@@ -5,10 +5,11 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
 import { CgArrowRight } from "react-icons/cg";
+import workSans from "@/fonts/fonts";
 
 export default function Carousel() {
   return (
-    <div className=" flex justify-center items-center py-10">
+    <div className={`flex justify-center items-center py-10 ${workSans.className} `}>
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: true }}

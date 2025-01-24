@@ -6,7 +6,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/landing"); // Ensure the path is correct and uses "/"
+    router.push("/landing");
   }, [router]);
 
   return null;

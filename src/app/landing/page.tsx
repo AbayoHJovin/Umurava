@@ -5,7 +5,9 @@ import SkillsChallenge from "./SkillsChallenge";
 import HackathonsSection from "./HackathonsSection";
 import SKillsChallengeBenefits from "./SkillsChallengeBenefits";
 import Testmonials from "./Testmonials";
-import HowToStart from "./HowToStart"
+import HowToStart from "./HowToStart";
+import CareerComponent from "./CareerComponent";
+import Footer from "@/components/Footer";
 
 export default function LandingPage() {
   return (
@@ -16,9 +18,10 @@ export default function LandingPage() {
       <SkillsChallenge />
       <HackathonsSection />
       <SKillsChallengeBenefits />
-      <Testmonials/>
-      <HowToStart/>
-      
+      <Testmonials />
+      <HowToStart />
+      <CareerComponent />
+      <Footer />
     </div>
   );
 }

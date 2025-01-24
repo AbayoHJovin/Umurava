@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import { Drawer, List, ListItem } from "@mui/material";
+import workSans from "@/fonts/fonts";
 
 interface NavbarProps {
   currentPage: string;
@@ -19,7 +20,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
   };
 
   return (
-    <nav className="flex items-center justify-between p-4 lg:px-36 bg-white mt-5  text-black sticky top-0 z-50 backdrop-blur-2xl">
+    <nav
+      className={`flex items-center justify-between p-4 lg:px-36 bg-white mt-5  text-black sticky top-0 z-50 backdrop-blur-2xl ${workSans.className}`}
+    >
       <div className="flex items-center">
         <Image
           src="/logo.png"
@@ -30,7 +33,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
         />
       </div>
 
-      <div className="hidden xmd:flex space-x-7 items-center justify-center flex-grow text-black">
+      <div className="hidden xmd:flex space-x-7 text-lg items-center justify-center flex-grow text-black">
         {navbarLinks.map((link, index) => (
           <Link
             key={index}

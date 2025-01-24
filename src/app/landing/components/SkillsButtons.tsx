@@ -1,4 +1,5 @@
 "use client";
+import workSans from "@/fonts/fonts";
 import { useState } from "react";
 
 const SkillsButtons = () => {
@@ -16,7 +17,7 @@ const SkillsButtons = () => {
   ];
 
   return (
-    <div className="py-10 px-4">
+    <div className={`py-10 px-4 ${workSans.className} `}>
       <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
         {skills.map((skill) => (
           <button

@@ -1,3 +1,4 @@
+import workSans from "@/fonts/fonts";
 import React from "react";
 
 const StatsSection = () => {
@@ -8,7 +9,7 @@ const StatsSection = () => {
         countries:"6+"
     }
   return (
-    <div className="bg-blue-700 text-white py-8 mx-10 my-5 px-10 w-[900px]  rounded-xl relative overflow-hidden">
+    <div className={`bg-blue-700 text-white py-8 mx-10 my-5 px-10 w-[900px]  rounded-xl relative overflow-hidden ${workSans.className}`}>
       <div className="absolute top-[-50px] left-[-50px] w-96 h-96 bg-blue-500 rounded-full opacity-30"></div>
       <div className="absolute bottom-[-50px] right-[-50px] w-96 h-96 bg-blue-500 rounded-full opacity-30"></div>
 

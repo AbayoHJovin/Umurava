@@ -1,4 +1,5 @@
 import ChallengeComponent from "@/components/ChallengeComponent";
+import workSans from "@/fonts/fonts";
 
 export default function HackathonsSection() {
   const challenges = [
@@ -41,7 +42,7 @@ export default function HackathonsSection() {
     },
   ];
   return (
-    <div>
+    <div className={`${workSans.className} container mx-auto`}>
       <div>
         <h1 className="text-3xl font-bold text-center">
           Explore challenges & Hackathons
@@ -53,7 +54,7 @@ export default function HackathonsSection() {
             part of Africa's largest workforce of digital professionals
           </span>
         </h1>
-        <div className="flex justify-center items-center gap-10 my-10">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-5 xmd:gap-0 lg:gap-10 my-10">
           {challenges.slice(0, 3).map((challenge) => (
             <ChallengeComponent
               key={challenge.challengeId}
