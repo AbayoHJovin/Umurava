@@ -21,7 +21,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
 
   return (
     <nav
-      className={`flex items-center justify-between p-4 lg:px-36 bg-white mt-5  text-black sticky top-0 z-50 backdrop-blur-2xl ${workSans.className}`}
+      className={`flex items-center justify-between p-4 xmd:px-10 llg:px-36 bg-white mt-5  text-black sticky top-0 z-50 backdrop-blur-2xl ${workSans.className}`}
     >
       <div className="flex items-center">
         <Image
@@ -33,7 +33,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
         />
       </div>
 
-      <div className="hidden xmd:flex space-x-7 text-lg items-center justify-center flex-grow text-black">
+      <div className="hidden xmd:flex space-x-2 xmd:space-x-5 items-center justify-center text-black">
         {navbarLinks.map((link, index) => (
           <Link
             key={index}
@@ -42,7 +42,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               currentPage == link.label ? "text-blue-600" : "text-black"
             } cursor-pointer`}
           >
-            {link.label}
+            <span className="text-xs xmd:text-lg">{link.label}</span>
           </Link>
         ))}
       </div>

@@ -7,17 +7,18 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-     screens: {
+    screens: {
       sssm: "320px",
       xsm: "386px",
       smm: "400px",
       ssm: "550px",
       sm: "640px",
       md: "768px",
-      lmd:"815px",
+      lmd: "815px",
       xmd: "960px",
       lg: "1024px",
-      xlg: "1900",
+      llg:"1300px",
+      xlg: "1900px",
     },
     extend: {
       colors: {
@@ -31,7 +32,6 @@ export default {
         openSans: ["Open Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
-      
     },
   },
   plugins: [],

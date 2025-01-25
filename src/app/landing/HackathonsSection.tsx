@@ -1,7 +1,10 @@
+"use client";
 import ChallengeComponent from "@/components/ChallengeComponent";
 import workSans from "@/fonts/fonts";
+import { useRouter } from "next/navigation";
 
 export default function HackathonsSection() {
+  const router = useRouter();
   const challenges = [
     {
       challengeId: "1",
@@ -65,6 +68,7 @@ export default function HackathonsSection() {
         {challenges.length > 3 && (
           <div className="text-center mt-6">
             <button
+              onClick={() => router.push("/Challenge_and_Hackthons")}
               className={`border border-blue-500 text-[#2B71F0] hover:text-white font-lato hover:bg-blue-600 transition-colors duration-500 font-bold py-2 px-7 rounded`}
             >
               View More

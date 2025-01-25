@@ -19,7 +19,7 @@ export default function Footer() {
           className="mb-4 sm:mb-0"
         ></object>
         <div className="flex gap-6 sm:gap-8 mt-4 sm:mt-0">
-          {socialMedia.map((media,index) => (
+          {socialMedia.map((media, index) => (
             <div
               className={`bg-white cursor-pointer rounded-full text-2xl text-[#001A40] p-3 ${media.hover} transition-all duration-300`}
               key={index}
@@ -59,13 +59,13 @@ export default function Footer() {
           <h1 className="font-bold text-xl text-center w-full max-w-[400px]">
             Join our newsletter to keep up to date with us!
           </h1>
-          <div className="flex flex-col sm:flex-row w-full max-w-[400px] items-center bg-white p-3 rounded-md">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2 max-w-[400px] items-center bg-white p-3 rounded-md">
             <input
               type="email"
-              className="flex-grow bg-white text-black outline-none border-none p-2"
+              className="flex-grow  text-black w-full sm:w-auto outline-none border-none p-2"
               placeholder="email"
             />
-            <button className="bg-[#2B71F0] text-white p-3 rounded-md sm:ml-2 mt-2 sm:mt-0 flex-none">
+            <button className="bg-[#2B71F0] w-full sm:w-auto text-white p-3 rounded-md mt-2 sm:mt-0">
               Subscribe
             </button>
           </div>

@@ -34,7 +34,7 @@ export default function Carousel() {
             </div>
             <div className="md:w-1/2">
               <img
-                src="./image.png"
+                src="./payroll.png"
                 alt="Dashboard example"
                 className="w-full h-auto"
               />

@@ -16,9 +16,9 @@ export default function EducationHeroSection() {
         }}
       ></div>
 
-      <div className="relative text-center xmd:text-left z-10">
+      <div className="relative text-start xsm:text-center xmd:text-left z-10">
         <h1
-          className={`text-[#2B71F0] font-[700] text-[25px] md:text-[25px] xmd:text-[30px] ${workSans.className}`}
+          className={`text-[#2B71F0] font-[700] text-[20px] md:text-[25px] xmd:text-[30px] ${workSans.className}`}
         >
           Accelerate Your Students and Trainees
           <span className="inline md:block">

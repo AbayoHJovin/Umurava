@@ -3,5 +3,5 @@ export const navbarLinks = [
   { label: "Challenge & Hackthons", href: "/Challenge_and_Hackthons" },
   { label: "For Learning Institutions", href: "/learningInstitutions" },
   { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contacts" },
+  { label: "Contact Us", href: "/landing" },
 ];

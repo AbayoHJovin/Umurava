@@ -45,7 +45,7 @@ export default function Testmonials() {
       thumbnail: "/testmonialThumbnail.png",
     },
     {
-      id: 3,
+      id: 5,
       witness: "Alex Smith",
       role: "Data Scientist",
       location: "London",
@@ -54,7 +54,7 @@ export default function Testmonials() {
       thumbnail: "/testmonialThumbnail.png",
     },
     {
-      id: 4,
+      id: 6,
       witness: "Maria Garcia",
       role: "Marketing Specialist",
       location: "Madrid",
@@ -67,57 +67,58 @@ export default function Testmonials() {
   return (
     <div className={`container mx-auto bg-white ${workSans.className}`}>
       {/* Header */}
-      <div className="flex flex-col items-start mb-6">
-        <h1 className="text-black text-2xl md:text-4xl font-bold text-center md:text-start">
+      <div className="flex flex-col items-start mb-6 mx-3">
+        <h1 className="text-black text-2xl md:text-4xl font-bold text-center sm:text-start">
           Users are in Love with Skills{" "}
           <span className="inline md:block">Challenges Program</span>
         </h1>
-        <h1 className="text-[#687588] my-3 text-center md:text-start">
+        <h1 className="text-[#687588] my-3 text-center sm:text-start">
           See what our clients say about working with us. Their success
           <span className="inline md:block">
             speaks for our dedication and expertise.
           </span>
         </h1>
       </div>
-
-      {/* Swiper Component */}
       <Swiper
-        spaceBetween={20} // Space between slides
-        slidesPerView="auto" // Automatically adjust number of visible slides
+        spaceBetween={20}
+        slidesPerView="auto"
         breakpoints={{
-          640: { slidesPerView: 1 }, // 1 slide for small screens
-          768: { slidesPerView: 2 }, // 2 slides for medium screens
-          1024: { slidesPerView: 3 }, // 3 slides for large screens
-          1280: { slidesPerView: 4 }, // 4 slides for extra-large screens
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
         }}
         pagination={{
           clickable: true,
-          dynamicBullets: true,
+          el: ".custom-pagination",
         }}
         modules={[Pagination]}
         className="w-full"
       >
-        {testmonials.map((testmony) => (
-          <SwiperSlide key={testmony.id}>
-            <div className="flex space-x-5">
-              <TestmonialVideoContainer testimony={testmony} />
-            </div>
-          </SwiperSlide>
-        ))}
+        <div className="flex items-center bg-blue-500 justify-center">
+          {testmonials.map((testmony) => (
+            <SwiperSlide key={testmony.id}>
+              <div className="flex space-x-5 justify-center items-center">
+                <TestmonialVideoContainer testimony={testmony} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
-      <div className="mt-10">
-        <style jsx global>{`
-          .swiper-pagination-bullet {
-            background-color: #d1d5db; /* Gray bullets */
-            width: 12px;
-            height: 12px;
-            margin: 0 5px;
-          }
-          .swiper-pagination-bullet-active {
-            background-color: #3b82f6; /* Blue active bullet */
-          }
-        `}</style>
-      </div>
+      <div className="custom-pagination flex justify-center mt-6"></div>
+
+      <style jsx global>{`
+        .custom-pagination .swiper-pagination-bullet {
+          background-color: #d1d5db; /* Gray bullets */
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          opacity: 1; /* Ensure full opacity for visibility */
+        }
+        .custom-pagination .swiper-pagination-bullet-active {
+          background-color: #3b82f6; /* Blue active bullet */
+        }
+      `}</style>
     </div>
   );
 }
