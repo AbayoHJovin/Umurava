@@ -37,7 +37,7 @@ export default function HeroSection() {
       {/* Image Section */}
       <div className="hidden xmd:block">
         <Image
-          src="/heroImage.png"
+          src="/HeroImage.png"
           width={500}
           height={500}
           alt="Hero image"
