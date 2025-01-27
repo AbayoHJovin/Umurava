@@ -13,7 +13,6 @@ const PartnerLogos = [
   { name: "Ared", imgSrc: "/partners/ared.png" },
   { name: "Igihe", imgSrc: "/partners/igihe.png" },
   { name: "Viamo", imgSrc: "/partners/viamo.png" },
-  { name: "Kepler", imgSrc: "/partners/keplerLogo.png" },
   { name: "Laterite", imgSrc: "/partners/laterite.png" },
   { name: "SokoFund", imgSrc: "/partners/sokofund.png" },
 ];
