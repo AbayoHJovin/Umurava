@@ -79,7 +79,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
         </div>
         <List>
           {navbarLinks.map((link, index) => (
-            <ListItem key={index} button>
+            <ListItem key={index} component="div">
               <Link
                 href={link.href}
                 className={`text-lg ${
