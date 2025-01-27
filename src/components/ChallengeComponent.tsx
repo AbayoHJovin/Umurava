@@ -3,7 +3,21 @@ import workSans from "@/fonts/fonts";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function ChallengeComponent({ challenge }) {
+interface Challenge {
+  challengeId: string;
+  challengeStatus: string;
+  challengeImage: string;
+  challengeName: string;
+  challengeSkills: string[];
+  challengeSeniorityLevel: string; // "(Junior,Intermediate,Senior)" format
+  challengeTimeline: string;
+}
+
+interface ChallengeComponentProps {
+  challenge: Challenge;
+}
+
+export default function ChallengeComponent({ challenge }:ChallengeComponentProps) {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
