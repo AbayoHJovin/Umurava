@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 xmd:hidden"
         style={{
-          backgroundImage: "url('/heroImage.png')",
+          backgroundImage: "url('/HeroImage.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.1, // Dimmed effect for the background image
