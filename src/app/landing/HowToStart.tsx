@@ -38,21 +38,21 @@ export default function HowToStart() {
 
   return (
     <div className={`bg-[#F9FAFB] ${workSans.className}`}>
-      <div className=" py-10 px-4 container mx-auto">
-        <h1 className="text-black text-2xl md:text-4xl font-bold text-center my-12 ">
+      <div className="py-10 px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto max-w-7xl">
+        <h1 className="text-black text-2xl md:text-4xl font-bold text-center my-12">
           How to Get Started
         </h1>
-        <div className="grid lg:grid-cols-2 gap-3">
-          <div className="flex flex-col justify-between gap-3">
+        <div className="grid lg:grid-cols-2 gap-6">
+          <div className="flex flex-col justify-between gap-6">
             {theFirstTwoSteps.map((step) => (
               <div key={step.number} className="flex-1 flex flex-col">
                 <StartingSteps step={step} />
               </div>
             ))}
           </div>
-          <div className="flex flex-col justify-between gap-3">
-            {theLastSteps.map((step, index) => (
-              <div key={step.number} className={`flex-1 flex flex-col`}>
+          <div className="flex flex-col justify-between gap-6">
+            {theLastSteps.map((step) => (
+              <div key={step.number} className="flex-1 bg-white flex flex-col">
                 <StartingSteps step={step} />
               </div>
             ))}

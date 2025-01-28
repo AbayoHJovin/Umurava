@@ -60,16 +60,18 @@ export default function SKillsChallengeBenefits() {
   return (
     <div className={`${workSans.className} py-10`}>
       <div className="flex flex-col items-center justify-center">
-        <h1 className={`text-black text-2xl md:text-4xl font-bold text-center`}>
+        <h1
+          className={`text-black text-2xl md:text-4xl font-bold text-start sssm:text-center`}
+        >
           What else can I gain from{" "}
           <span className="inline md:block">
             participating in skills Challenges?
           </span>
         </h1>{" "}
-        <h1 className="text-center text-[#687588] my-3">
+        <h1 className="text-start sssm:text-center text-[#687588] my-3">
           Join Skills Challenges Program to accelerate your career growth and
           become
-          <span className="ssm:block">
+          <span className="sssm:block">
             part of Africa's largest workforce of digital professionals
           </span>
         </h1>
