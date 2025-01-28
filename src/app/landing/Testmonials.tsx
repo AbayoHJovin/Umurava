@@ -120,7 +120,7 @@ export default function Testmonials() {
     //     }
     //   `}</style>
     // </div>
-    <div className={`bg-gray-50 ${workSans.className} px-6 lg:px-12 py-12`}>
+    <div className={`bg-gray-50 ${workSans.className} p-4 xmd:px-10 llg:px-36`}>
   <div className="flex flex-col items-start mb-6 mx-3 sm:mx-6 lg:mx-8 xl:mx-12">
     <h1 className="text-black text-2xl md:text-4xl font-bold text-center sm:text-start">
       Users are in Love with Skills{" "}
