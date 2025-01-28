@@ -6,6 +6,37 @@ import { FaMedal } from "react-icons/fa";
 import workSans from "@/fonts/fonts";
 
 export default function SKillsChallengeBenefits() {
+  const cardData = [
+    {
+      id: 1,
+      name: "Enhance Your Employment Path",
+      description:
+        "Network with other talented individuals and learn from their experiences.",
+      logo: <CgBriefcase size={50} className="bg-blue-500 text-white p-2 rounded-md text-3xl" />,
+    },
+    {
+      id: 2,
+      name: "Earn Recognition and Prizes",
+      description:
+        "Gain valuable experience and knowledge to advance your career in the digital economy.",
+      logo: <AiFillTrophy size={50} className="bg-blue-500 text-white text-3xl p-2 rounded-md" />,
+    },
+    {
+      id: 3,
+      name: "Personal Growth",
+      description:
+        "Challenge yourself, learn new skills, and expand your professional network.",
+      logo: <CgTrending size={50} className="bg-blue-500 text-white text-xl p-2 rounded-md" />,
+    },
+    {
+      id: 4,
+      name: "Learn from Industry Experts",
+      description:
+        "Access valuable insights and guidance from experienced professionals in the digital careers fields and spaces.",
+      logo: <FaMedal size={50} className="bg-blue-500 text-white p-2 text-3xl rounded-md" />,
+    },
+  ];
+  
   return (
     <div className={`${workSans.className} bg-[#F9FAFB] py-10`}>
       <div className="flex flex-col items-center justify-center">
@@ -24,77 +55,31 @@ export default function SKillsChallengeBenefits() {
         </h1>
       </div>
       <div className="flex content-center container mx-auto justify-center items-center px-3 py-12 gap-5">
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
-            <CgBriefcase
-              size={50}
-              className="bg-blue-500 text-white p-2 rounded-md text-3xl"
-            />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 w-full max-w-7xl mx-auto px-4">
+        {cardData.map((card) => (
+          <div
+            key={card.id}
+            className="flex flex-col items-start gap-4 p-6 rounded-lg shadow-lg bg-white w-full"
+          >
+            {card.logo}
             <div>
-              <h3 className="text-lg font-bold">
-                Enhance Your Employment Path
-              </h3>
-              <p className="text-gray-600">
-                Network with other talented individuals and learn from their
-                experiences.
-              </p>
+              <h3 className="text-lg font-bold">{card.name}</h3>
+              <p className="text-gray-600">{card.description}</p>
             </div>
           </div>
-
-          {/* Card 2 */}
-          <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
-            <AiFillTrophy
-              size={50}
-              className="bg-blue-500 text-white text-3xl p-2 rounded-md"
-            />
-            <div>
-              <h3 className="text-lg font-bold">Earn Recognition and Prizes</h3>
-              <p className="text-gray-600">
-                Gain valuable experience and knowledge to advance your career in
-                the digital economy.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
-            <CgTrending
-              size={50}
-              className="bg-blue-500 text-white text-xl p-2 rounded-md"
-            />
-            <div>
-              <h3 className="text-lg font-bold">Personal Growth</h3>
-              <p className="text-gray-600">
-                Challenge yourself, learn new skills, and expand your
-                professional network.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
-            <FaMedal
-              size={50}
-              className="bg-blue-500 text-white p-2 text-3xl rounded-md"
-            />
-            <div>
-              <h3 className="text-lg font-bold">Learn from Industry Experts</h3>
-              <p className="text-gray-600">
-                Access valuable insights and guidance from experienced
-                professionals in the digital careers fields and spaces.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="hidden lg:flex w-auto">
-          <Image
-            src={"/banner_image.png"}
-            alt="challenges image"
-            width={800}
-            height={300}
-            objectFit="cover"
-          />
-        </div>
+        ))}
       </div>
+
+      <div className="hidden lg:flex w-full max-w-[800px] mx-auto">
+        <Image
+          src={"/banner_image.png"}
+          alt="challenges image"
+          width={800}
+          height={300}
+          objectFit="cover"
+        />
+      </div>
+    </div>
     </div>
   );
 }
