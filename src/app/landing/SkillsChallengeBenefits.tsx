@@ -70,7 +70,7 @@ export default function SKillsChallengeBenefits() {
         ))}
       </div>
 
-      <div className="hidden lg:flex w-full max-w-[800px] mx-auto">
+      <div className="hidden lg:flex max-w-[800px] mx-auto">
         <Image
           src={"/banner_image.png"}
           alt="challenges image"
