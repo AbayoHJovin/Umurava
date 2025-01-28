@@ -23,7 +23,7 @@ export default function SKillsChallengeBenefits() {
           </span>
         </h1>
       </div>
-      <div className="flex content-center justify-center items-center px-3 py-12 gap-5">
+      <div className="flex content-center container mx-auto justify-center items-center px-3 py-12 gap-5">
         <div className="grid md:grid-cols-2 gap-4">
           <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
             <CgBriefcase
@@ -56,7 +56,6 @@ export default function SKillsChallengeBenefits() {
             </div>
           </div>
 
-          {/* Card 3 */}
           <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
             <CgTrending
               size={50}
