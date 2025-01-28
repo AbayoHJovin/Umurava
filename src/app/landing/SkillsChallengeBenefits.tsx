@@ -23,9 +23,8 @@ export default function SKillsChallengeBenefits() {
           </span>
         </h1>
       </div>
-      <div className="flex justify-center container mx-auto px-3 py-12 gap-5">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Card 1 */}
+      <div className="flex content-center justify-center items-center px-3 py-12 gap-5">
+        <div className="grid md:grid-cols-2 gap-4">
           <div className="flex flex-col items-start gap-4 p-10 rounded-lg">
             <CgBriefcase
               size={50}
@@ -87,7 +86,7 @@ export default function SKillsChallengeBenefits() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:flex w-full">
+        <div className="hidden lg:flex w-auto">
           <Image
             src={"/banner_image.png"}
             alt="challenges image"

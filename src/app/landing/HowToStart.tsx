@@ -43,7 +43,6 @@ export default function HowToStart() {
           How to Get Started
         </h1>
         <div className="grid lg:grid-cols-2 gap-3">
-          {/* Column 1 */}
           <div className="flex flex-col justify-between gap-3">
             {theFirstTwoSteps.map((step) => (
               <div key={step.number} className="flex-1 flex flex-col">
@@ -51,7 +50,6 @@ export default function HowToStart() {
               </div>
             ))}
           </div>
-          {/* Column 2 */}
           <div className="flex flex-col justify-between gap-3">
             {theLastSteps.map((step, index) => (
               <div key={step.number} className={`flex-1 flex flex-col`}>

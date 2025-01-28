@@ -22,7 +22,6 @@ export default function Section2() {
       </div>
       <div className=" py-8 px-4 md:px-16 flex justify-center items-center">
         <span className="block space-y-3 items-center gap-2">
-          {/* //the first container */}
           <div className="bg-blue-600 text-white rounded-lg shadow-md p-6 w-fit xmd:w-[850px]">
             <div className="bg-white rounded-md p-3 mb-4 inline-block">
               <FiShoppingBag className="text-blue-600 text-3xl" />
