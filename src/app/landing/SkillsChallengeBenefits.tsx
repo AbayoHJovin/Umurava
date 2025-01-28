@@ -74,61 +74,34 @@ export default function SKillsChallengeBenefits() {
           </span>
         </h1>
       </div>
-      {/* <div className="flex content-center mx-auto justify-center items-center px-3 py-12 gap-5 bg-green-300">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3 px-4">
-          {cardData.map((card) => (
-            <div
-              key={card.id}
-              className="flex flex-col items-start gap-4 p-6 rounded-lg shadow-lg bg-white"
-            >
-              {card.logo}
-              <div>
-                <h3 className="text-lg font-bold">{card.name}</h3>
-                <p className="text-gray-600">{card.description}</p>
+      <div className="flex items-center justify-center  px-6 lg:px-12 py-12">
+        <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
+            {cardData.map((card) => (
+              <div
+                key={card.id}
+                className="flex flex-col items-start gap-4 p-6 rounded-lg"
+              >
+                {card.logo}
+                <div>
+                  <h3 className="text-lg font-bold">{card.name}</h3>
+                  <p className="text-gray-600">{card.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="hidden lg:flex max-w-[800px] mx-auto">
-          <Image
-            src={"/banner_image.png"}
-            alt="challenges image"
-            width={800}
-            height={300}
-            objectFit="cover"
-          />
-        </div>
-      </div> */}
-      <div className="min-h-screen flex items-center justify-center  px-6 lg:px-12 py-12">
-  <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-5">
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-4">
-      {cardData.map((card) => (
-        <div
-          key={card.id}
-          className="flex flex-col items-start gap-4 p-6 rounded-lg"
-        >
-          {card.logo}
-          <div>
-            <h3 className="text-lg font-bold">{card.name}</h3>
-            <p className="text-gray-600">{card.description}</p>
+          <div className="hidden lg:flex max-w-[800px]">
+            <Image
+              src={"/banner_image.png"}
+              alt="challenges image"
+              width={800}
+              height={300}
+              objectFit="cover"
+            />
           </div>
         </div>
-      ))}
-    </div>
-
-    <div className="hidden lg:flex max-w-[800px]">
-      <Image
-        src={"/banner_image.png"}
-        alt="challenges image"
-        width={800}
-        height={300}
-        objectFit="cover"
-      />
-    </div>
-  </div>
-</div>
-
+      </div>
     </div>
   );
 }
