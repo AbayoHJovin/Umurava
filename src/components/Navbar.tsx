@@ -7,6 +7,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import { Drawer, List, ListItem } from "@mui/material";
 import workSans from "@/fonts/fonts";
+import { useRouter } from "next/navigation";
 
 interface NavbarProps {
   currentPage: string;
@@ -18,20 +19,22 @@ export default function Navbar({ currentPage }: NavbarProps) {
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
   };
-
+const router =  useRouter()
   return (
     <nav
       className={`flex items-center justify-between p-4 xmd:px-10 llg:px-36 bg-white mt-5  text-black sticky top-0 z-50 backdrop-blur-2xl ${workSans.className}`}
     >
-      <div className="flex items-center">
+      <Link href={"/landing"}>
+      <div className="flex items-center cursor-pointer">
         <Image
           src="/logo.png"
           width={150}
           height={150}
           alt="Logo"
           className="rounded-full"
-        />
+          />
       </div>
+          </Link>
 
       <div className="hidden xmd:flex space-x-2 xmd:space-x-5 items-center justify-center text-black">
         {navbarLinks.map((link, index) => (

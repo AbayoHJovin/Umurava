@@ -17,11 +17,9 @@ export default function ChallengesAndHackthons() {
     challengeTimeline: "15 days",
   };
   const challenges = [];
-  //   useEffect(() => {
   for (let i = 0; i <= 10; i++) {
     challenges.push(challenge);
   }
-  //   }, []);
   return (
     <div className="bg-[#F9FAFB]">
       <Navbar currentPage="Challenge & Hackthons" />

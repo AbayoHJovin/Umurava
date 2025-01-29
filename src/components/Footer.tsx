@@ -18,10 +18,10 @@ export default function Footer() {
           height={50}
           className="mb-4 sm:mb-0"
         ></object>
-        <div className="flex gap-6 sm:gap-8 mt-4 sm:mt-0">
+        <div className="flex flex-col sssm:flex-row gap-6 sm:gap-8 mt-4 sm:mt-0">
           {socialMedia.map((media, index) => (
             <div
-              className={`bg-white cursor-pointer rounded-full text-2xl text-[#001A40] p-3 ${media.hover} transition-all duration-300`}
+              className={`bg-white cursor-pointer rounded-full text-lg sssm:text-2xl text-[#001A40] p-3 ${media.hover} transition-all duration-300`}
               key={index}
             >
               {media.logo}

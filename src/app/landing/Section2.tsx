@@ -22,7 +22,7 @@ export default function Section2() {
       </div>
       <div className=" py-8 px-4 md:px-16 flex justify-center items-center">
         <span className="block space-y-3 items-center gap-2">
-          <div className="bg-blue-600 text-white rounded-lg shadow-md p-6 w-fit xmd:w-[850px]">
+          <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[850px]">
             <div className="bg-white rounded-md p-3 mb-4 inline-block">
               <FiShoppingBag className="text-blue-600 text-3xl" />
             </div>
@@ -40,7 +40,7 @@ export default function Section2() {
           {/* The below two rows */}
           <div className="flex flex-col xmd:flex-row gap-2 items-center">
             {/* The second component*/}
-            <div className="bg-blue-600 text-white rounded-lg shadow-md p-6 w-fit xmd:w-[425px] h-[250px]">
+            <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[425px] h-[250px]">
               <div className="bg-white rounded-md p-3 mb-4 inline-block">
                 <FiShoppingBag className="text-blue-600 text-3xl" />
               </div>
@@ -53,7 +53,7 @@ export default function Section2() {
               </p>
             </div>
             {/* The fourth component */}
-            <div className="bg-blue-600 text-white rounded-lg shadow-md p-6 w-fit xmd:w-[425px] h-[250px]">
+            <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[425px] h-[250px]">
               <div className="bg-white rounded-md p-3 mb-4 inline-block">
                 <FiShoppingBag className="text-blue-600 text-3xl" />
               </div>
