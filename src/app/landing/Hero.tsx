@@ -6,7 +6,6 @@ export default function HeroSection() {
     <div
       className={`flex flex-col xmd:flex-row items-center justify-evenly min-h-[85vh] mb-10 space-y-6 sm:space-y-0 sm:space-x-10 px-4 bg-white ${workSans.className}`}
     >
-      {/* Background image on small screens */}
       <div
         className="absolute inset-0 xmd:hidden"
         style={{

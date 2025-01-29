@@ -3,7 +3,9 @@ import Image from "next/image";
 
 export default function CareerComponent() {
   return (
-    <div className={`relative bg-blue-500 ${workSans.className} container text-white p-6 md:p-8 rounded-lg mx-auto overflow-hidden h-auto`}>
+    <div
+      className={`relative bg-blue-500 ${workSans.className} text-white p-6 md:p-8 rounded-lg mx-auto overflow-hidden h-auto max-w-7xl my-6`}
+    >
       <div className="absolute inset-0 pointer-events-none">
         <svg
           className="absolute top-0 right-0 w-40 h-40 text-blue-400 transform translate-x-1/3 -translate-y-1/3"
