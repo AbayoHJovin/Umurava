@@ -192,7 +192,7 @@ export default function SKillsChallengeBenefits() {
             {cardData.map((card) => (
               <div
                 key={card.id}
-                className="flex flex-col items-start gap-4 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="flex flex-col items-start gap-4 p-6 rounded-lg"
               >
                 {card.logo}
                 <div>
@@ -204,7 +204,7 @@ export default function SKillsChallengeBenefits() {
           </div>
 
           {/* Image (Hidden on smaller screens) */}
-          <div className="hidden lg:flex w-full lg:w-1/2 max-w-[800px]">
+          <div className="hidden lg:flex w-full lg:w-1/2 max-w-[600px]">
             <Image
               src={"/banner_image.png"}
               alt="challenges image"
