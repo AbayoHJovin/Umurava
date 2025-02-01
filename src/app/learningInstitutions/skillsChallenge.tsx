@@ -2,6 +2,13 @@ import workSans from "@/fonts/fonts";
 import Image from "next/image";
 
 export default function SkillsChallengesSection() {
+  const steps = [
+    "As Career Development and Job Readiness Program",
+    "As Skills Assessments Method after a course or a term",
+    "As extracurricular activities to complement academic courses",
+    "As the portfolio of the Students",
+    "As part of Capstone Projects or final-year assignments",
+  ];
   return (
     <div
       className={`relative flex flex-col xmd:flex-row items-center justify-center min-h-[85vh] mb-10 space-y-6 sm:space-y-0 sm:space-x-10 px-4 bg-white ${workSans.className}`}
@@ -26,27 +33,16 @@ export default function SkillsChallengesSection() {
           </span>
         </h1>
         <ul className="text-lg max-w-[35rem] mx-auto xmd:mx-0 my-5 space-y-4">
-          <li className="flex items-start space-x-3">
-            <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">1</span>
-            <p>As Career Development and Job Readiness Program</p>
-          </li>
-          <li className="flex items-start space-x-3">
-            <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">2</span>
-            <p>As Skills Assessments Method after a course or a term</p>
-          </li>
-          <li className="flex items-start space-x-3">
-            <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">3</span>
-            <p>As extracurricular activities to complement academic courses</p>
-          </li>
-          <li className="flex items-start space-x-3">
-            <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">4</span>
-            <p>As the portfolio of the Students</p>
-          </li>
-          <li className="flex items-start space-x-3">
-            <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold">5</span>
-            <p>As part of Capstone Projects or final-year assignments</p>
-          </li>
+          {steps.map((step, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <span className="bg-[#2B71F0] text-white rounded-full h-8 w-8 min-w-[2rem] min-h-[2rem] flex items-center justify-center font-bold">
+                {index + 1}
+              </span>
+              <p>{step}</p>
+            </li>
+          ))}
         </ul>
+        
       </div>
 
       {/* Image Section for larger screens */}

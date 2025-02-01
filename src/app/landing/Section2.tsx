@@ -4,15 +4,16 @@ import StatsSection from "./components/Stats";
 
 export default function Section2() {
   return (
-    <div className={`bg-gray-50 `}>
+    <div className={`bg-gray-50 py-5`}>
+      {/* Text Section */}
       <div
-        className={`flex flex-col ${workSans.className}  items-center text-center`}
+        className={`flex flex-col ${workSans.className} items-center text-center px-4 md:px-0`}
       >
         <h1 className={`text-black text-2xl md:text-4xl font-bold`}>
           Experience a New Way of Building
           <span className="inline md:block"> Work Experience</span>
         </h1>
-        <h1 className="text-[#687588] text-lg my-5 text-center md:text-start">
+        <h1 className="text-[#687588] text-lg my-5 text-center md:text-start max-w-[800px] mx-auto">
           Join Skills Challenge Program to accelerate your career growth and
           become{" "}
           <span className="inline md:block">
@@ -20,9 +21,12 @@ export default function Section2() {
           </span>
         </h1>
       </div>
-      <div className=" py-8 px-4 md:px-16 flex justify-center items-center">
-        <span className="block space-y-3 items-center gap-2">
-          <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[850px]">
+
+      {/* Cards Section */}
+      <div className="py-8 px-4 md:px-16 flex justify-center items-center">
+        <div className="space-y-3 w-full max-w-[1200px]">
+          {/* First Card */}
+          <div className="bg-blue-600 text-white rounded-lg p-6 w-full max-w-[1000px] mx-auto">
             <div className="bg-white rounded-md p-3 mb-4 inline-block">
               <FiShoppingBag className="text-blue-600 text-3xl" />
             </div>
@@ -31,16 +35,16 @@ export default function Section2() {
             </h2>
             <p className="text-sm">
               Tackle real-world projects through challenges and hackathons that
-              mirror real-world challenges faced by businesses and
-              organizations. Therefore, showcase your skills and accomplishments
-              to potential employers and clients through a portfolio of
-              completed projects.
+              mirror real-world challenges faced by businesses and organizations.
+              Therefore, showcase your skills and accomplishments to potential
+              employers and clients through a portfolio of completed projects.
             </p>
           </div>
-          {/* The below two rows */}
-          <div className="flex flex-col xmd:flex-row gap-2 items-center">
-            {/* The second component*/}
-            <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[425px] h-[250px]">
+
+          {/* Second and Third Cards */}
+          <div className="flex flex-col xmd:flex-row gap-3 w-full max-w-[1000px] mx-auto">
+            {/* Second Card */}
+            <div className="bg-blue-600 text-white rounded-lg p-6 w-full xmd:w-1/2 h-[250px]">
               <div className="bg-white rounded-md p-3 mb-4 inline-block">
                 <FiShoppingBag className="text-blue-600 text-3xl" />
               </div>
@@ -52,8 +56,9 @@ export default function Section2() {
                 increase your chances of landing your dream job or contract.
               </p>
             </div>
-            {/* The fourth component */}
-            <div className="bg-blue-600 text-white rounded-lg p-6 w-fit xmd:w-[425px] h-[250px]">
+
+            {/* Third Card */}
+            <div className="bg-blue-600 text-white rounded-lg p-6 w-full xmd:w-1/2 h-[250px]">
               <div className="bg-white rounded-md p-3 mb-4 inline-block">
                 <FiShoppingBag className="text-blue-600 text-3xl" />
               </div>
@@ -67,9 +72,11 @@ export default function Section2() {
               </p>
             </div>
           </div>
-        </span>
+        </div>
       </div>
-      <div className="flex justify-center my-6">
+
+      {/* Stats Section */}
+      <div className="flex justify-center my-6 px-4 md:px-0">
         <StatsSection />
       </div>
     </div>

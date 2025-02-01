@@ -14,7 +14,9 @@ export default function SkillsChallenge() {
         Explore the projects that various talents are working on.
       </h1>
       <SkillsButtons />
-      <Carousel />
+      <div className="bg-white py-10">
+        <Carousel />
+      </div>
     </div>
   );
 }

@@ -60,21 +60,19 @@ export default function SKillsChallengeBenefits() {
   return (
     <div className={`${workSans.className} py-10`}>
       {/* Heading Section */}
-      <div className="flex flex-col items-center justify-center text-center mx-4 md:mx-6 lg:mx-auto max-w-7xl">
-        <h1 className="text-black text-2xl md:text-4xl font-bold">
-          What else can I gain from{" "}
-          <span className="inline md:block">
-            participating in skills Challenges?
-          </span>
-        </h1>
-        <p className="text-[#687588] my-3">
-          Join Skills Challenges Program to accelerate your career growth and
-          become part of Africa's largest workforce of digital professionals
-        </p>
-      </div>
+     <div className="flex flex-col items-center justify-center text-center mx-4 md:mx-6 lg:mx-auto max-w-7xl">
+  <h1 className="text-black text-2xl md:text-4xl font-bold">
+    What else can I gain from{" "}
+    <span className="inline md:block">participating in Skills Challenges?</span>
+  </h1>
+  <p className="text-[#687588] my-3 max-w-[600px] mx-auto px-4">
+    Join Skills Challenges Program to accelerate your career growth and become
+    part of Africa's largest workforce of digital professionals.
+  </p>
+</div>
 
       {/* Cards and Image Section */}
-      <div className="mx-4 md:mx-6 lg:mx-auto max-w-7xl py-12">
+      <div className="mx-4 md:mx-8 lg:mx-auto max-w-[75rem] py-12">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">

@@ -12,9 +12,10 @@ export default function HackathonsSection() {
       challengeImage: "/challengeImage.png",
       challengeName:
         "Design Dashboard for SokoFund which is the largest business",
-      challengeSkills: ["UI/UX Design", "User Research", "User Research"],
+      challengeSkills: ["UI/UX Design", "User Research", "Research"],
       challengeSeniorityLevel: "(Junior,Intermediate,Senior)",
       challengeTimeline: "15 days",
+      status:"Open"
     },
     {
       challengeId: "2",

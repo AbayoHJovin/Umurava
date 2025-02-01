@@ -4,8 +4,9 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div
-      className={`flex flex-col xmd:flex-row items-center justify-evenly min-h-[85vh] mb-10 space-y-6 sm:space-y-0 sm:space-x-10 px-4 bg-white ${workSans.className}`}
+      className={`flex flex-col xmd:flex-row items-center justify-evenly min-h-[85vh] mb-10 px-4 bg-white ${workSans.className}`}
     >
+      {/* Background Image for Mobile */}
       <div
         className="absolute inset-0 xmd:hidden"
         style={{
@@ -15,9 +16,11 @@ export default function HeroSection() {
           opacity: 0.1, // Dimmed effect for the background image
         }}
       ></div>
-      <div className="text-center xmd:text-left">
+
+      {/* Text Section */}
+      <div className="text-center xmd:text-left z-10">
         <h1
-          className={`text-[#2B71F0] text-center md:text-start font-[700]  text-[25px] md:text-[35px] xmd:text-[40px] ${workSans.className}`}
+          className={`text-[#2B71F0] text-center md:text-start font-[700] text-[25px] md:text-[35px] xmd:text-[40px] ${workSans.className}`}
         >
           Build work experience
           <span className="inline md:block"> through Skills Challenges</span>
@@ -34,7 +37,7 @@ export default function HeroSection() {
       </div>
 
       {/* Image Section */}
-      <div className="hidden xmd:block">
+      <div className="hidden xmd:block z-10">
         <Image
           src="/HeroImage.png"
           width={500}

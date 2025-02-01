@@ -17,7 +17,7 @@ export default {
       lmd: "815px",
       xmd: "960px",
       lg: "1024px",
-      llg:"1300px",
+      llg: "1300px",
       xlg: "1900px",
     },
     extend: {

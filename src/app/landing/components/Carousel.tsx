@@ -18,7 +18,7 @@ export default function Carousel() {
         className="max-w-4xl"
       >
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row items-center bg-[#F1F1F1] rounded-lg shadow-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center bg-[#F1F1F1] rounded-lg shadow-lg overflow-hidden py-10 w-full">
             <div className="p-6 flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
               <Image src={"/sf.png"} width={50} height={50} alt="sf" />
               <p className="text-gray-600 mb-4">
