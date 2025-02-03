@@ -63,7 +63,6 @@ export default function Home() {
 
   return (
     <div className={`flex ${workSans.className}`}>
-      {/* Desktop Sidebar: visible on md and above */}
       <SideBar
         profileImageUrl="/sf.png"
         href={[
@@ -75,7 +74,6 @@ export default function Home() {
         ]}
       />
 
-      {/* Mobile Sidebar: visible on small screens when toggled */}
       <SideBar
         profileImageUrl="/sf.png"
         href={[
