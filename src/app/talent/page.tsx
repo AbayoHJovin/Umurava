@@ -66,8 +66,8 @@ export default function Home() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
+          "/talent",
+          "/talent/challenges",
           "/settings",
           "/help",
           "/family",
@@ -77,8 +77,8 @@ export default function Home() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
+        "/talent",
+          "/talent/challenges",
           "/settings",
           "/help",
           "/family",
@@ -118,13 +118,13 @@ export default function Home() {
           <div className="flex justify-between items-center py-6">
             <p className="text-xl font-medium">Recent Challenges</p>
             <div className="text-[#2B71F0] flex items-center gap-2">
-              <Link href={"/challenges"} className="font-medium">
+              <Link href={"/talent"} className="font-medium">
                 See all
               </Link>
               <SlArrowRight />
             </div>
           </div>
-          <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5">
             {challenges.map((challenge, index) => (
               <ChallengeComponent key={index} challenge={challenge} />
             ))}

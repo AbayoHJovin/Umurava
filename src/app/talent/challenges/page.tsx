@@ -129,8 +129,8 @@ export default function Challenges() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
+         "/talent",
+          "/talent/challenges",
           "/settings",
           "/help",
           "/family",
@@ -140,8 +140,8 @@ export default function Challenges() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
+         "/talent",
+          "/talent/challenges",
           "/settings",
           "/help",
           "/family",
