@@ -8,7 +8,7 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { LiaTelegramPlane } from "react-icons/lia";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -28,13 +28,14 @@ export default function SideBar({
   mobileSidebarOpen,
   onCloseMobile,
 }: SidebarItemProps) {
-  const [communityModalVisible, setCommunityVisible] = useState(false);
 
+  const [communityModalVisible, setCommunityVisible] = useState(false);
   const containerClass = mobile
     ? `fixed inset-y-0 left-0 w-64 bg-[#2B71F0] text-center flex flex-col justify-between p-6 z-50 transform transition-transform duration-300 ${
         mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`
     : `hidden md:flex ${"w-20 lg:w-[20%]"} h-screen fixed overflow-auto bg-[#2B71F0] text-center flex-col justify-between p-6`;
+
 
   return (
     <div className={`${containerClass} min-h-screen`}>
@@ -107,7 +108,6 @@ export default function SideBar({
         )}
 
         <div className="flex items-center justify-between py-8 px-3 text-white">
-          {/* Profile info visible on medium and larger screens */}
           <div className="hidden md:flex items-center gap-4">
             <Image
               src={profileImageUrl}
@@ -121,7 +121,6 @@ export default function SideBar({
               <p className="text-sm truncate">hilaire@uidesign</p>
             </section>
           </div>
-          {/* Logout icon always visible */}
           <GoSignOut className="font-bold" size={30} />
         </div>
       </div>
@@ -148,6 +147,18 @@ const SidebarItem: React.FC<SidebarItemComponentProps> = ({
   onClick,
   mobile,
 }) => {
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+    useEffect(() => {
+      const checkScreenSize = () => {
+        setIsLargeScreen(window.innerWidth >= 1024);
+      };
+  
+      checkScreenSize();
+  
+      window.addEventListener("resize", checkScreenSize);
+  
+      return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
   const path = usePathname();
 
   const isActive = (pathname: string) => {
@@ -165,7 +176,7 @@ const SidebarItem: React.FC<SidebarItemComponentProps> = ({
       }`}
     >
       {icon}
-      {(mobile || window.innerWidth >= 1024) && (
+      {(mobile || isLargeScreen) && (
         <p className="text-xl font-normal truncate">{label}</p>
       )}
     </Link>
