@@ -7,6 +7,7 @@ import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
 import workSans from "@/fonts/fonts";
 import { FaChevronDown } from "react-icons/fa";
+import allChallenges from "@/constants/challenges";
 
 export default function Challenges() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,56 +30,7 @@ export default function Challenges() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  const allChallenges = [
-    {
-      challengeId: "1",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName:
-        "Design Dashboard for SokoFund which is the largest business",
-      challengeSkills: ["UI/UX Design", "User Research", "Research"],
-      challengeSeniorityLevel: "(Junior,Intermediate,Senior)",
-      challengeTimeline: "15 days",
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "3",
-      challengeStatus: "completed",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Develop E-commerce Website",
-      challengeSkills: ["Node.js", "MongoDB", "Tailwind CSS"],
-      challengeSeniorityLevel: "(Junior, Intermediate)",
-      challengeTimeline: "20 days",
-    },
-    {
-      challengeId: "4",
-      challengeStatus: "completed",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Build AI Chatbot",
-      challengeSkills: ["Python", "AI/ML", "NLP"],
-      challengeSeniorityLevel: "(Senior)",
-      challengeTimeline: "40 days",
-    },
-    {
-      challengeId: "5",
-      challengeStatus: "ongoing",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Build AI Chatbot",
-      challengeSkills: ["Python", "AI/ML", "NLP"],
-      challengeSeniorityLevel: "(Senior)",
-      challengeTimeline: "40 days",
-    },
-  ];
-
-  const [categories, setCategories] = useState([
+   const [categories, setCategories] = useState([
     { category: "All Challenges", number: 0 },
     { category: "Completed Challenges", number: 0 },
     { category: "Open Challenges", number: 0 },
@@ -129,7 +81,7 @@ export default function Challenges() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-         "/talent",
+          "/talent",
           "/talent/challenges",
           "/settings",
           "/help",
@@ -140,7 +92,7 @@ export default function Challenges() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-         "/talent",
+          "/talent",
           "/talent/challenges",
           "/settings",
           "/help",
@@ -214,9 +166,17 @@ export default function Challenges() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-4 gap-5 mt-6">
+          <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5 mt-6">
             {filteredChallenges.map((challenge, index) => (
-              <ChallengeComponent key={index} challenge={challenge} />
+              <ChallengeComponent
+              key={index}
+              challengeImage={challenge.challengeImage}
+              challengeId={challenge.challengeId}
+              challengeName={challenge.challengeName}
+              challengeStatus={challenge.challengeStatus}
+              challengeSkills={challenge.challengeSkills}
+              challengeTimeline={challenge.challengeTimeline}
+              />
             ))}
           </div>
 

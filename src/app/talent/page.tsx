@@ -9,58 +9,9 @@ import TopBar from "@/components/TopBar";
 import Link from "next/link";
 import ChallengeComponent from "@/components/ChallengeComponent";
 import { useState } from "react";
-
+import allChallenges from "@/constants/challenges";
 export default function Home() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-
-  const challenges = [
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-  ];
-
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -125,8 +76,14 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5">
-            {challenges.map((challenge, index) => (
-              <ChallengeComponent key={index} challenge={challenge} />
+            {allChallenges.map((challenge, index) => (
+              <ChallengeComponent key={index}
+              challengeImage={challenge.challengeImage}
+              challengeId={challenge.challengeId}
+              challengeName={challenge.challengeName}
+              challengeStatus={challenge.challengeStatus}
+              challengeSkills={challenge.challengeSkills}
+              challengeTimeline={challenge.challengeTimeline} />
             ))}
           </div>
         </div>

@@ -2,49 +2,10 @@
 import ChallengeComponent from "@/components/ChallengeComponent";
 import workSans from "@/fonts/fonts";
 import { useRouter } from "next/navigation";
+import allChallenges from "@/constants/challenges";
 
 export default function HackathonsSection() {
   const router = useRouter();
-  const challenges = [
-    {
-      challengeId: "1",
-      challengeStatus: "Open",
-      challengeImage: "/challengeImage.png",
-      challengeName:
-        "Design Dashboard for SokoFund which is the largest business",
-      challengeSkills: ["UI/UX Design", "User Research", "Research"],
-      challengeSeniorityLevel: "(Junior,Intermediate,Senior)",
-      challengeTimeline: "15 days",
-      status:"Open"
-    },
-    {
-      challengeId: "2",
-      challengeStatus: "Open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Create a Social Media App",
-      challengeSkills: ["React", "Firebase", "UI Design"],
-      challengeSeniorityLevel: "(Intermediate, Senior)",
-      challengeTimeline: "30 days",
-    },
-    {
-      challengeId: "3",
-      challengeStatus: "Open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Develop E-commerce Website",
-      challengeSkills: ["Node.js", "MongoDB", "Tailwind CSS"],
-      challengeSeniorityLevel: "(Junior, Intermediate)",
-      challengeTimeline: "20 days",
-    },
-    {
-      challengeId: "4",
-      challengeStatus: "Open",
-      challengeImage: "/challengeImage.png",
-      challengeName: "Build AI Chatbot",
-      challengeSkills: ["Python", "AI/ML", "NLP"],
-      challengeSeniorityLevel: "(Senior)",
-      challengeTimeline: "40 days",
-    },
-  ];
   return (
     <div className={`${workSans.className} container mx-auto`}>
       <div>
@@ -59,14 +20,14 @@ export default function HackathonsSection() {
           </span>
         </h1>
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 xmd:gap-0 lg:gap-10 my-10">
-          {challenges.slice(0, 3).map((challenge) => (
+          {allChallenges.slice(0, 3).map((challenge) => (
             <ChallengeComponent
               key={challenge.challengeId}
               challenge={challenge}
             />
           ))}
         </div>
-        {challenges.length > 3 && (
+        {allChallenges.length > 3 && (
           <div className="text-center mt-6">
             <button
               onClick={() => router.push("/Challenge_and_Hackthons")}
