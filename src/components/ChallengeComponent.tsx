@@ -113,30 +113,32 @@ export default function Challenges({
   challengeName,
   challengeTimeline,
   challengeStatus,
-  challengeSkills,
+  challengeSkills = [],
   challengeImage,
 }: ChallengesProps) {
   return (
     <div className="border-2 border-gray-200 rounded-xl px-6 w-[30%]">
       <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
+        {/* Image Section */}
         <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] mb-4 rounded-lg overflow-hidden bg-gray-100">
           <Image
             src={challengeImage}
-            alt="Umurava logo"
-            width={50}
-            height={50}
+            alt="Challenge banner"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
           />
-          <button
-            className={`absolute top-4 right-2 ${
+          <span
+            className={`absolute ${
               challengeStatus === "open"
                 ? "bg-[#0F973D]"
                 : challengeStatus === "ongoing"
                 ? "bg-orange-500"
                 : "bg-red-500"
-            }  text-white font-bold px-6 py-1 rounded-full`}
+            } top-2 right-2 text-white text-sm font-semibold px-3 py-1 rounded-full`}
           >
             {challengeStatus}
-          </button>
+          </span>
         </div>
 
         <Link
