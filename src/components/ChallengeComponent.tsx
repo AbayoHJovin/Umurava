@@ -107,6 +107,7 @@ interface ChallengesProps {
   challengeSkills: string[];
   challengeTimeline: string;
   challengeComponentWidth?: string;
+  detailsUrl:string,
 }
 
 export default function Challenges({
@@ -117,6 +118,7 @@ export default function Challenges({
   challengeSkills = [],
   challengeImage,
   challengeComponentWidth,
+  detailsUrl
 }: ChallengesProps) {
   return (
     <div
@@ -147,7 +149,7 @@ export default function Challenges({
 
         <Link
           title={challengeName}
-          href={`challenges/details/${challengeId}`}
+          href={`${detailsUrl}/${challengeId}`}
           className="text-2xl font-semibold text-gray-800 truncate block overflow-hidden whitespace-nowrap"
         >
           {challengeName}
@@ -172,9 +174,9 @@ export default function Challenges({
         </p>
       </div>
       <div className="py-6">
-        <button className="bg-[#2B71F0] text-white font-medium px-3 py-2 rounded-md border-t-2 border-gray-200">
+        <Link href={`${detailsUrl}/${challengeId}`} className="bg-[#2B71F0] text-white font-medium px-3 py-3 rounded-md border-t-2 border-gray-200">
           View Challenge
-        </button>
+        </Link>
       </div>
     </div>
   );

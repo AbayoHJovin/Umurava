@@ -30,7 +30,7 @@ export default function Challenges() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-   const [categories, setCategories] = useState([
+  const [categories, setCategories] = useState([
     { category: "All Challenges", number: 0 },
     { category: "Completed Challenges", number: 0 },
     { category: "Open Challenges", number: 0 },
@@ -83,9 +83,9 @@ export default function Challenges() {
         href={[
           "/talent",
           "/talent/challenges",
-          "/settings",
-          "/help",
-          "/family",
+          "/talent/settings",
+          "/talent/help",
+          "/talent/family",
         ]}
       />
 
@@ -94,9 +94,9 @@ export default function Challenges() {
         href={[
           "/talent",
           "/talent/challenges",
-          "/settings",
-          "/help",
-          "/family",
+          "talent/settings",
+          "/talent/help",
+          "/talent/family",
         ]}
         mobile
         mobileSidebarOpen={mobileSidebarOpen}
@@ -169,13 +169,14 @@ export default function Challenges() {
           <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5 mt-6">
             {filteredChallenges.map((challenge, index) => (
               <ChallengeComponent
-              key={index}
-              challengeImage={challenge.challengeImage}
-              challengeId={challenge.challengeId}
-              challengeName={challenge.challengeName}
-              challengeStatus={challenge.challengeStatus}
-              challengeSkills={challenge.challengeSkills}
-              challengeTimeline={challenge.challengeTimeline}
+                key={index}
+                detailsUrl="/talent/challenges"
+                challengeImage={challenge.challengeImage}
+                challengeId={challenge.challengeId}
+                challengeName={challenge.challengeName}
+                challengeStatus={challenge.challengeStatus}
+                challengeSkills={challenge.challengeSkills}
+                challengeTimeline={challenge.challengeTimeline}
               />
             ))}
           </div>

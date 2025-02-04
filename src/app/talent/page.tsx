@@ -78,6 +78,7 @@ export default function Home() {
           <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5">
             {allChallenges.map((challenge, index) => (
               <ChallengeComponent key={index}
+              detailsUrl="/"
               challengeImage={challenge.challengeImage}
               challengeId={challenge.challengeId}
               challengeName={challenge.challengeName}

@@ -15,6 +15,7 @@ export default function ChallengesAndHackthons() {
         <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-4 gap-10">
           {allChallenges.map((challenge, index) => (
             <ChallengeComponent
+              detailsUrl="talent/challenges"
               key={index}
               challengeImage={challenge.challengeImage}
               challengeId={challenge.challengeId}

@@ -55,7 +55,7 @@ export default function AdminDashboard() {
           </div>
           <div className="flex gap-6 py-6">
             <AdminChallengeCard
-              width="100"
+              // width="100"
               title="Total Challenges"
               number="29,450"
               time="This Week"
@@ -67,7 +67,7 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-              width="100"
+              // width="100"
               title="Total Participants"
               number="29,450"
               time="This Week"
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
           </div>
           <div className="flex  gap-6 py-6">
             <AdminChallengeCard
-              width="100"
+              // width="100"
               title="Total Challenges"
               number="29,450"
               time="This Week"
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-              width="100"
+              // width="100"
               title="Total Participants"
               number="29,450"
               time="This Week"
@@ -105,7 +105,7 @@ export default function AdminDashboard() {
               }
             />
             <AdminChallengeCard
-              width="100"
+              // width="100"
               title="Total Participants"
               number="29,450"
               time="This Week"

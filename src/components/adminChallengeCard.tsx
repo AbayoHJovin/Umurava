@@ -6,7 +6,7 @@ interface adminChallengeCardProps {
   number: string;
   time: string;
   icon: React.ReactNode;
-  width: string;
+  // width: string;
 }
 
 export default function AdminChallengeCard({
@@ -14,11 +14,10 @@ export default function AdminChallengeCard({
   number,
   time,
   icon,
-  width,
 }: adminChallengeCardProps) {
   return (
     <div
-      className={`border-2 border-gray-200 rounded-xl w-[${width}%] py-4 px-6 space-y-6`}
+      className={`border-2 border-gray-200 rounded-xl w-[100%] py-4 px-6 space-y-6`}
     >
       <div className="flex items-center gap-2 justify-end ">
         <p className="text-gray-400">{time}</p>

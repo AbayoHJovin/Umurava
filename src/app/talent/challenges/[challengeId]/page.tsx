@@ -14,20 +14,21 @@ import { useParams } from "next/navigation";
 import allChallenges from "@/constants/challenges";
 import { ChallengeProps } from "@/types/challengeProps";
 import { isChallengeProps } from "@/functions/checkChallenge";
+import Link from "next/link";
 
 export default function Details() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [challenge, setChallenge] = useState<ChallengeProps | null>(null);
 
   const params = useParams();
-  const challengeId = params.challengeId as string; 
+  const challengeId = params.challengeId as string;
 
   useEffect(() => {
     if (challengeId) {
       const oneChallenge = allChallenges.find(
         (ch) => ch.challengeId === challengeId
       );
-  
+
       // Check if the found challenge matches ChallengeProps
       if (oneChallenge && isChallengeProps(oneChallenge)) {
         setChallenge(oneChallenge);
@@ -36,28 +37,27 @@ export default function Details() {
       }
     }
   }, [challengeId]);
-  
 
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
-          "/settings",
-          "/help",
-          "/family",
+          "/talent",
+          "/talent/challenges",
+          "talent/settings",
+          "talent/help",
+          "talent/family",
         ]}
       />
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/challenges",
-          "/challenges/challengesTab",
-          "/settings",
-          "/help",
-          "/family",
+          "/talent",
+          "/talent/challengesTab",
+          "/talent/settings",
+          "/talent/help",
+          "/talent/family",
         ]}
         mobile
         mobileSidebarOpen={mobileSidebarOpen}
@@ -71,11 +71,16 @@ export default function Details() {
           />
         </div>
         <div className="flex gap-6 items-center ps-10 py-6">
-          <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
-            <HiArrowSmallLeft />
-          </div>
-          <p className="text-gray-600 text-xl">Go Back</p>
-          <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
+          <Link href="/talent/challenges" className="flex gap-2 items-center">
+            <HiArrowSmallLeft
+              size={50}
+              className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4"
+            />
+            <p className="text-gray-600 text-xl">Go Back</p>
+          </Link>
+          <Link href={"/talent/challenges"} className="text-gray-400 text-xl">
+            Challenges & Hackathons \
+          </Link>
           <a href="" className="text-[#2B71F0] text-xl">
             {challenge?.challengeName}
           </a>
