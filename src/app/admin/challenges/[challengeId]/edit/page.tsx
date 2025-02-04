@@ -84,7 +84,7 @@ export default function AdminEditChallengesDetails() {
             <p className="text-gray-600 text-xl">Go Back</p>
             <p className="text-gray-400 text-xl">Challenges & Hackathons /</p>
             <a
-              href="/admin/challenges/edit"
+              href="/admin/challenges/create"
               className="text-[#2B71F0] text-xl font-medium"
             >
               Create New Challenge

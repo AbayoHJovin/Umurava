@@ -169,7 +169,7 @@ export default function AdminChallenges() {
               </div>
             </div>
             <Link
-              href=""
+              href="/admin/challenges/create"
               className="bg-[#2B71F0] hover:bg-blue-700 rounded-xl text-white font-medium px-6 py-4 flex gap-4 items-center"
             >
               <GoPlus size={30} />
