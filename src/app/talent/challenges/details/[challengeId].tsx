@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import ChallengeDetails from "@/components/ChallengeDetails";
-import SideBar from "@/components/SideBar"; 
-import TopBar from "@/components/TopBar"; 
+import SideBar from "@/components/SideBar";
+import TopBar from "@/components/TopBar";
 import workSans from "@/fonts/fonts";
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import { IoMailOutline } from "react-icons/io5";
@@ -9,41 +9,63 @@ import { BiBriefcase } from "react-icons/bi";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import allChallenges from "@/constants/challenges";
 
 export default function Details() {
-    const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [challenge, setChallenge] = useState<{
+    challengeId: string;
+    challengeStatus: string;
+    challengeImage: string;
+    challengeName: string;
+    challengeDescription: string;
+    challengeSkills: string[];
+    challengeSeniorityLevel: string;
+    challengeTimeline: string;
+  } | null>(null);
+  const router = useRouter();
+  const { challengeId } = router.query;
+  useEffect(() => {
+    if (challengeId) {
+      const oneChallenge = allChallenges.find(
+        (ch) => ch.challengeId === challengeId
+      );
+      setChallenge(oneChallenge || null);
+    }
+  }, []);
   return (
     <div className={`flex ${workSans.className}`}>
-     <SideBar
-            profileImageUrl="/sf.png"
-            href={[
-              "/challenges",
-              "/challenges/challengesTab",
-              "/settings",
-              "/help",
-              "/family",
-            ]}
-          />
-    
-          {/* Mobile Sidebar: visible on small screens when toggled */}
-          <SideBar
-            profileImageUrl="/sf.png"
-            href={[
-              "/challenges",
-              "/challenges/challengesTab",
-              "/settings",
-              "/help",
-              "/family",
-            ]}
-            mobile
-            mobileSidebarOpen={mobileSidebarOpen}
-            onCloseMobile={() => setMobileSidebarOpen(false)}
-          />
+      <SideBar
+        profileImageUrl="/sf.png"
+        href={[
+          "/challenges",
+          "/challenges/challengesTab",
+          "/settings",
+          "/help",
+          "/family",
+        ]}
+      />
+      <SideBar
+        profileImageUrl="/sf.png"
+        href={[
+          "/challenges",
+          "/challenges/challengesTab",
+          "/settings",
+          "/help",
+          "/family",
+        ]}
+        mobile
+        mobileSidebarOpen={mobileSidebarOpen}
+        onCloseMobile={() => setMobileSidebarOpen(false)}
+      />
       <div className="ml-[20%] w-[80%]">
         <div className="border-b-2 border-gray-300">
-      <TopBar profileImageUrl="/sf.png" onMobileSidebarOpen={() => setMobileSidebarOpen(true)} />
+          <TopBar
+            profileImageUrl="/sf.png"
+            onMobileSidebarOpen={() => setMobileSidebarOpen(true)}
+          />
         </div>
         <div className="flex gap-6 items-center ps-10 py-6">
           <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
@@ -52,7 +74,7 @@ export default function Details() {
           <p className="text-gray-600 text-xl">Go Back</p>
           <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
           <a href="" className="text-[#2B71F0] text-xl">
-            Design a Dashboard for Sokofund
+            {challenge?.challengeName}
           </a>
         </div>
         <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
@@ -68,13 +90,8 @@ export default function Details() {
             </div>
             <div>
               <ChallengeDetails
-                projectName="Payroll and HR Management System"
-                description="A Fintech company that is developing a Digital Financial
-        Platform designed for businesses and their workforce in Africa is
-        partnering with Umurava to run a Skills Challenge for Product Design.
-        This Fintech Company offers Payroll Management System to Employers and
-        Embedded Financial services and products to Employees and Gig Workers
-        across Africa."
+                projectName={challenge?.challengeName}
+                description={challenge.challengeDescription}
               />
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 const allChallenges = [
   {
     challengeId: "1",
@@ -6,6 +5,8 @@ const allChallenges = [
     challengeImage: "/challengeImage.png",
     challengeName:
       "Design Dashboard for SokoFund which is the largest business",
+    challengeDescription:
+      "A Fintech company that is developing a Digital Financial Platform designed for businesses and their workforce in Africa is partnering with Umurava to run a Skills Challenge for Product Design.This Fintech Company offers Payroll Management System to Employers and Embedded Financial services and products to Employees and Gig Workers across Africa.",
     challengeSkills: ["UI/UX Design", "User Research", "Research"],
     challengeSeniorityLevel: "(Junior,Intermediate,Senior)",
     challengeTimeline: "15 days",
@@ -57,4 +58,4 @@ const allChallenges = [
   },
 ];
 
-  export default allChallenges;
+export default allChallenges;

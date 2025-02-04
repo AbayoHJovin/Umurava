@@ -8,8 +8,7 @@ import workSans from "@/fonts/fonts";
 import AdminChallengeCard from "@/components/adminChallengeCard";
 import { TiDocumentText } from "react-icons/ti";
 import { useState } from "react";
-import challenges from "@/constants/challenges";
-
+import allChallenges from "@/constants/challenges";
 export default function AdminDashboard() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
@@ -127,7 +126,7 @@ export default function AdminDashboard() {
             </div>
           </div>
           <div className="py-10 flex items-center gap-16 flex-wrap">
-            {challenges.map((challenge, index) => (
+            {allChallenges.map((challenge, index) => (
               <Challenges
                 key={index}
                 challengeImage={challenge.challengeImage}
