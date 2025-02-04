@@ -3,47 +3,64 @@ import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
 import workSans from "@/fonts/fonts";
 import { HiArrowSmallLeft } from "react-icons/hi2";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, KeyboardEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function AdminEditChallengesDetails() {
-  const [text, setText] = useState<string>("• ");
-  const [requirementsText, setRequirementsText] = useState<string>("•");
-  const [deliverablesText, setDeliverablesText] = useState<string>("•");
+  const [text, setText] = useState<string[]>(["• "]);
+  const [requirementsText, setRequirementsText] = useState<string[]>(["• "]);
+  const [deliverablesText, setDeliverablesText] = useState<string[]>(["• "]);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const router = useRouter();
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    let value = e.target.value;
-
-    if (value.endsWith("\n")) {
-      value += "• ";
-    }
-
-    setText(value);
+    const value = e.target.value;
+    const lines = value.split("\n");
+    setText(lines);
   };
 
-  const handleRequirementsChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    let value = e.target.value;
-
-    if (value.endsWith("\n")) {
-      value += "• ";
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setText((prevText) => [...prevText, "• "]);
     }
-    setRequirementsText(value);
   };
 
-  const handleDeliverablesChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    let value = e.target.value;
+  const handleRequirementsChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    const lines = value.split("\n");
+    setRequirementsText(lines);
+  };
 
-    if (value.endsWith("\n")) {
-      value += "• ";
+  const handleRequirementsKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setRequirementsText((prevText) => [...prevText, "• "]);
     }
-    setDeliverablesText(value);
+  };
+
+  const handleDeliverablesChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    const lines = value.split("\n");
+    setDeliverablesText(lines);
+  };
+
+  const handleDeliverablesKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); 
+      setDeliverablesText((prevText) => [...prevText, "• "]);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const data = {
+      projectDescription: text.filter((line) => line.trim() !== ""),
+      requirements: requirementsText.filter((line) => line.trim() !== ""),
+      deliverables: deliverablesText.filter((line) => line.trim() !== ""),
+    };
+    console.log(data);
   };
 
   return (
@@ -72,7 +89,7 @@ export default function AdminEditChallengesDetails() {
         mobileSidebarOpen={mobileSidebarOpen}
         onCloseMobile={() => setMobileSidebarOpen(false)}
       />
-      <div className="ml-[20%] w-[80%]">
+      <div className="ml-0 md:ml-20 lg:ml-[20%] w-full transition-all duration-300">
         <TopBar
           profileImageUrl="/sf.png"
           onMobileSidebarOpen={() => setMobileSidebarOpen(true)}
@@ -103,10 +120,13 @@ export default function AdminEditChallengesDetails() {
           </div>
         </div>
         <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
-          <form className="bg-white border-2 border-gray-200 rounded-xl py-6 px-2 w-[60%] mx-auto">
+          <form
+            className="bg-white border-2 border-gray-200 rounded-xl py-6 px-2 w-[60%] mx-auto"
+            onSubmit={handleSubmit}
+          >
             <div className="space-y-2">
               <legend className="text-3xl font-semibold text-center">
-                Edit a Challenge
+                Create a new Challenge
               </legend>
               <p className="text-gray-500 text-xl text-center">
                 Fill out these details to build your broadcast
@@ -122,7 +142,7 @@ export default function AdminEditChallengesDetails() {
                   className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                 />
               </div>
-              <div className="flex items-center w-full gap-6">
+              <div className="flex flex-col md:flex-row items-center w-full gap-6">
                 <div className="flex-1 space-y-3">
                   <label
                     htmlFor="deadline"
@@ -132,6 +152,7 @@ export default function AdminEditChallengesDetails() {
                   </label>
                   <input
                     type="text"
+                    value={"24/12/2024"}
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
@@ -204,8 +225,9 @@ export default function AdminEditChallengesDetails() {
                   id="projectDescription"
                   rows={7}
                   className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
-                  value={text}
+                  value={text.join("\n")}
                   onChange={handleChange}
+                  onKeyDown={handleKeyDown}
                 />
                 <p className="text-xl text-gray-500">
                   {" "}
@@ -224,8 +246,9 @@ export default function AdminEditChallengesDetails() {
                   id="requirements"
                   rows={7}
                   className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
-                  value={requirementsText}
+                  value={requirementsText.join("\n")}
                   onChange={handleRequirementsChange}
+                  onKeyDown={handleRequirementsKeyDown}
                 />
                 <p className="text-xl text-gray-500">
                   {" "}
@@ -244,8 +267,9 @@ export default function AdminEditChallengesDetails() {
                   id="deliverable"
                   rows={7}
                   className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 text-gray-500 outline-none focus:border-red-300 text-xl"
-                  value={deliverablesText}
+                  value={deliverablesText.join("\n")}
                   onChange={handleDeliverablesChange}
+                  onKeyDown={handleDeliverablesKeyDown}
                 />
                 <p className="text-xl text-gray-500">
                   {" "}
@@ -256,7 +280,10 @@ export default function AdminEditChallengesDetails() {
                 <button className="border-2 border-[#2B71F0] bg-white hover:bg-[#2B71F0] hover:text-white duration-500 text-[#2B71F0] rounded-xl py-6 px-6 w-[35%] text-xl">
                   Cancel
                 </button>
-                <button className="border-2 border-[#2B71F0] bg-[#2B71F0] hover:bg-blue-800 duration-500 text-white rounded-xl py-6 px-6 flex-1 text-xl">
+                <button
+                  type="submit"
+                  className="border-2 border-[#2B71F0] bg-[#2B71F0] hover:bg-blue-800 duration-500 text-white rounded-xl py-6 px-6 flex-1 text-xl"
+                >
                   Update challenge
                 </button>
               </div>
