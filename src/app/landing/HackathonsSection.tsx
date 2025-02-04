@@ -20,11 +20,18 @@ export default function HackathonsSection() {
           </span>
         </h1>
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 xmd:gap-0 lg:gap-10 my-10">
-          {allChallenges.slice(0, 3).map((challenge) => (
-            <ChallengeComponent
-              key={challenge.challengeId}
-              challenge={challenge}
-            />
+          {allChallenges.slice(0, 3).map((challenge, index) => (
+            <div className="w-[25%]" key={index}>
+              <ChallengeComponent
+                key={index}
+                challengeImage={challenge.challengeImage}
+                challengeId={challenge.challengeId}
+                challengeName={challenge.challengeName}
+                challengeStatus={challenge.challengeStatus}
+                challengeSkills={challenge.challengeSkills}
+                challengeTimeline={challenge.challengeTimeline}
+              />
+            </div>
           ))}
         </div>
         {allChallenges.length > 3 && (

@@ -117,10 +117,10 @@ export default function Challenges({
   challengeImage,
 }: ChallengesProps) {
   return (
-    <div className="border-2 border-gray-200 rounded-xl px-6 w-[30%]">
+    <div className="border-2 border-gray-200 rounded-xl px-6 ">
       <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
         {/* Image Section */}
-        <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] mb-4 rounded-lg overflow-hidden bg-gray-100">
+        <div className="relative w-full h-[200px] mb-4 rounded-lg overflow-hidden bg-gray-100">
           <Image
             src={challengeImage}
             alt="Challenge banner"
