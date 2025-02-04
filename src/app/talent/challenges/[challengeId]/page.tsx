@@ -10,31 +10,34 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { AiOutlineDollar } from "react-icons/ai";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import allChallenges from "@/constants/challenges";
+import { ChallengeProps } from "@/types/challengeProps";
+import { isChallengeProps } from "@/functions/checkChallenge";
 
 export default function Details() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const [challenge, setChallenge] = useState<{
-    challengeId: string;
-    challengeStatus: string;
-    challengeImage: string;
-    challengeName: string;
-    challengeDescription: string;
-    challengeSkills: string[];
-    challengeSeniorityLevel: string;
-    challengeTimeline: string;
-  } | null>(null);
-  const router = useRouter();
-  const { challengeId } = router.query;
+  const [challenge, setChallenge] = useState<ChallengeProps | null>(null);
+
+  const params = useParams();
+  const challengeId = params.challengeId as string; 
+
   useEffect(() => {
     if (challengeId) {
       const oneChallenge = allChallenges.find(
         (ch) => ch.challengeId === challengeId
       );
-      setChallenge(oneChallenge || null);
+  
+      // Check if the found challenge matches ChallengeProps
+      if (oneChallenge && isChallengeProps(oneChallenge)) {
+        setChallenge(oneChallenge);
+      } else {
+        setChallenge(null); // Fallback if no valid challenge is found
+      }
     }
-  }, []);
+  }, [challengeId]);
+  
+
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
@@ -89,13 +92,9 @@ export default function Details() {
               <p className="text-2xl font-bold text-white">Umurava</p>
             </div>
             <div>
-              <ChallengeDetails
-                projectName={challenge?.challengeName}
-                description={challenge.challengeDescription}
-              />
+              <ChallengeDetails challenge={challenge || null} />
             </div>
           </div>
-
           <div className="w-[38%]">
             <div className="border-2 border-gray-200 rounded-xl px-8 py-10 space-y-6">
               <h1 className="text-2xl text-gray-800 font-bold">
