@@ -106,6 +106,7 @@ interface ChallengesProps {
   challengeName: string;
   challengeSkills: string[];
   challengeTimeline: string;
+  challengeComponentWidth?: string;
 }
 
 export default function Challenges({
@@ -115,9 +116,12 @@ export default function Challenges({
   challengeStatus,
   challengeSkills = [],
   challengeImage,
+  challengeComponentWidth,
 }: ChallengesProps) {
   return (
-    <div className="border-2 border-gray-200 rounded-xl px-6 w-full ">
+    <div
+      className={`border-2 border-gray-200 rounded-xl px-6 w-[${challengeComponentWidth}%]`}
+    >
       <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
         {/* Image Section */}
         <div className="relative w-full h-[200px] mb-4 rounded-lg overflow-hidden bg-gray-100">
@@ -178,7 +182,10 @@ export default function Challenges({
 
 const SkillsButton: React.FC<{ skill: string }> = ({ skill }) => {
   return (
-    <button title={skill} className="border-2 border-[#2B71F0] py-2 px-2 rounded-2xl text-[#2B71F0] font-medium truncate max-w-[100px]">
+    <button
+      title={skill}
+      className="border-2 border-[#2B71F0] py-2 px-2 rounded-2xl text-[#2B71F0] font-medium truncate max-w-[100px]"
+    >
       {skill}
     </button>
   );

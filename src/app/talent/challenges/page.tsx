@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import ChallengeCategoryCard from "@/components/ChallegeCategoriesCard";
+import ChallengeCategoryCard from "@/components/ChallengeCategoriesCard";
 import ChallengeComponent from "@/components/ChallengeComponent";
 import SideBar from "@/components/SideBar";
 import TopBar from "@/components/TopBar";
