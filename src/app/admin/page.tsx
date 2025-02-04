@@ -53,7 +53,7 @@ export default function AdminDashboard() {
               </p>
             </div>
           </div>
-          <div className="flex  gap-6 py-12">
+          <div className="flex gap-6 py-6">
             <AdminChallengeCard
               width="100"
               title="Total Challenges"
@@ -79,7 +79,7 @@ export default function AdminDashboard() {
               }
             />
           </div>
-          <div className="flex  gap-6 py-12">
+          <div className="flex  gap-6 py-6">
             <AdminChallengeCard
               width="100"
               title="Total Challenges"
