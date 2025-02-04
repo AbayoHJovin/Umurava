@@ -48,7 +48,7 @@ export default function AdminEditChallengesDetails() {
 
   const handleDeliverablesKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
-      e.preventDefault(); 
+      e.preventDefault();
       setDeliverablesText((prevText) => [...prevText, "• "]);
     }
   };
@@ -119,7 +119,7 @@ export default function AdminEditChallengesDetails() {
             </a>
           </div>
         </div>
-        <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
+        <div className="bg-[#F9FAFB] w-full py-12 ps-0 lg:ps-10 flex gap-12 border-t-2 border-gray-200">
           <form
             className="bg-white border-2 border-gray-200 rounded-xl py-6 px-2 w-[60%] mx-auto"
             onSubmit={handleSubmit}
@@ -143,7 +143,7 @@ export default function AdminEditChallengesDetails() {
                 />
               </div>
               <div className="flex flex-col md:flex-row items-center w-full gap-6">
-                <div className="flex-1 space-y-3">
+                <div className="flex-1 space-y-3 w-full">
                   <label
                     htmlFor="deadline"
                     className="block text-xl text-gray-600"
@@ -156,7 +156,7 @@ export default function AdminEditChallengesDetails() {
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
-                <div className="flex-1 space-y-3">
+                <div className="flex-1 space-y-3 w-full">
                   <label
                     htmlFor="duration"
                     className="block text-xl text-gray-600"
