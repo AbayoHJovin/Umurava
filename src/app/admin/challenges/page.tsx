@@ -83,22 +83,22 @@ export default function AdminChallenges() {
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/talent",
-          "/talent/challenges",
-          "/settings",
-          "/help",
-          "/family",
+          "/admin",
+          "/admin/challenges",
+          "/admin/settings",
+          "/admin/help",
+          "/admin/family",
         ]}
       />
 
       <SideBar
         profileImageUrl="/sf.png"
         href={[
-          "/talent",
-          "/talent/challenges",
-          "/settings",
-          "/help",
-          "/family",
+          "/admin",
+          "/admin/challenges",
+          "/admin/settings",
+          "/admin/help",
+          "/admin/family",
         ]}
         mobile
         mobileSidebarOpen={mobileSidebarOpen}
@@ -179,6 +179,7 @@ export default function AdminChallenges() {
           <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5 mt-6">
             {filteredChallenges.map((challenge, index) => (
               <ChallengeComponent
+              detailsUrl="/admin/challenges"
                 key={index}
                 challengeImage={challenge.challengeImage}
                 challengeId={challenge.challengeId}

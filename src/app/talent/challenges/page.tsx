@@ -170,13 +170,13 @@ export default function Challenges() {
             {filteredChallenges.map((challenge, index) => (
               <ChallengeComponent
                 key={index}
-                detailsUrl="/talent/challenges"
                 challengeImage={challenge.challengeImage}
                 challengeId={challenge.challengeId}
                 challengeName={challenge.challengeName}
                 challengeStatus={challenge.challengeStatus}
                 challengeSkills={challenge.challengeSkills}
                 challengeTimeline={challenge.challengeTimeline}
+                detailsUrl="/talent/challenges"
               />
             ))}
           </div>

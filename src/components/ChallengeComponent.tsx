@@ -107,7 +107,7 @@ interface ChallengesProps {
   challengeSkills: string[];
   challengeTimeline: string;
   challengeComponentWidth?: string;
-  detailsUrl:string,
+  detailsUrl: string;
 }
 
 export default function Challenges({
@@ -118,7 +118,7 @@ export default function Challenges({
   challengeSkills = [],
   challengeImage,
   challengeComponentWidth,
-  detailsUrl
+  detailsUrl,
 }: ChallengesProps) {
   return (
     <div
@@ -173,7 +173,10 @@ export default function Challenges({
         </p>
       </div>
       <div className="py-6">
-        <Link href={`${detailsUrl}/${challengeId}`} className="bg-[#2B71F0] text-white font-medium px-3 py-3 rounded-md border-t-2 border-gray-200">
+        <Link
+          href={`${detailsUrl}/${challengeId}`}
+          className="bg-[#2B71F0] text-white font-medium px-3 py-3 rounded-md border-t-2 border-gray-200"
+        >
           View Challenge
         </Link>
       </div>

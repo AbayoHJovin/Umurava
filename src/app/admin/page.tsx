@@ -128,6 +128,7 @@ export default function AdminDashboard() {
           <div className="py-10 flex items-center gap-16 flex-wrap">
             {allChallenges.map((challenge, index) => (
               <Challenges
+              detailsUrl="/admin/challenges"
                 key={index}
                 challengeImage={challenge.challengeImage}
                 challengeId={challenge.challengeId}
