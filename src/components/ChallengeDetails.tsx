@@ -5,26 +5,24 @@ interface ChallengeDetailsProps {
 }
 
 export default function ChallengeDetails({ challenge }: ChallengeDetailsProps) {
-  if (!challenge){
+  if (!challenge) {
     return <div>No challenge exists</div>;
   }
-    return (
-      <div className="space-y-6 pe-6">
-        <h1 className="text-2xl font-semibold text-gray-800">
-          Project Brief : {challenge.challengeName}
-        </h1>
-        <p className="text-gray-600 text-xl">
-          {challenge.challengeDescription}
-        </p>
-        <p className="text-2xl font-semibold text-gray-800">Task:</p>
-        <ChallengeDetailsItems
-          productRequirements={challenge.challegeRequirements}
-          productDesign={challenge.productDesign}
-          deliverables={challenge.derivables}
-          challengeNote={challenge.note}
-        />
-      </div>
-    );
+  return (
+    <div className="space-y-6 pe-6">
+      <h1 className="text-2xl font-semibold text-gray-800">
+        Project Brief : {challenge.challengeName}
+      </h1>
+      <p className="text-gray-600 text-xl">{challenge.challengeDescription}</p>
+      <p className="text-2xl font-semibold text-gray-800">Task:</p>
+      <ChallengeDetailsItems
+        productRequirements={challenge.challegeRequirements ?? []}
+        productDesign={challenge.productDesign ?? []}
+        deliverables={challenge.derivables ?? []}
+        challengeNote={challenge.note ?? []}
+      />
+    </div>
+  );
 }
 
 const ChallengeDetailsItems: React.FC<{
@@ -42,7 +40,7 @@ const ChallengeDetailsItems: React.FC<{
         <div>
           {productRequirements.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item text-gray-600 text-xl">{item}</li>
+              <li className="list-item text-gray-600 text-xl mb-4">{item}</li>
             </ul>
           ))}
         </div>
@@ -54,7 +52,7 @@ const ChallengeDetailsItems: React.FC<{
         <div>
           {productDesign.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item text-gray-600 text-xl">{item}</li>
+              <li className="list-item text-gray-600 text-xl mb-4">{item}</li>
             </ul>
           ))}
         </div>
@@ -64,7 +62,7 @@ const ChallengeDetailsItems: React.FC<{
         <div>
           {deliverables.map((item, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item text-gray-600 text-xl">{item}</li>
+              <li className="list-item text-gray-600 text-xl mb-4">{item}</li>
             </ul>
           ))}
         </div>
@@ -74,7 +72,7 @@ const ChallengeDetailsItems: React.FC<{
         <div>
           {challengeNote.map((note, index) => (
             <ul key={index} className="list-disc list-inside">
-              <li className="list-item text-gray-600 text-xl">{note}</li>
+              <li className="list-item text-gray-600 text-xl mb-4">{note}</li>
             </ul>
           ))}
         </div>
