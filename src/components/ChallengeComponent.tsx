@@ -125,7 +125,6 @@ export default function Challenges({
       className={`border-2 border-gray-200 rounded-xl px-6 w-[${challengeComponentWidth}%]`}
     >
       <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
-        {/* Image Section */}
         <div className="relative w-full h-[200px] mb-4 rounded-lg overflow-hidden bg-gray-100">
           <Image
             src={challengeImage}
