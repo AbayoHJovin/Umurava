@@ -23,7 +23,6 @@ export default function HackathonsSection() {
           {allChallenges.slice(0, 3).map((challenge, index) => (
             <div className="w-[25%]" key={index}>
               <ChallengeComponent
-                key={index}
                 challengeImage={challenge.challengeImage}
                 challengeId={challenge.challengeId}
                 challengeName={challenge.challengeName}
