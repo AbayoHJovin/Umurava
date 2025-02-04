@@ -10,6 +10,7 @@ import { useState, useEffect, useRef } from "react";
 import { GoPlus } from "react-icons/go";
 import allChallenges from "@/constants/challenges";
 import { FaChevronDown } from "react-icons/fa";
+import currentUser from "@/constants/currentUser";
 
 export default function AdminChallenges() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -81,7 +82,7 @@ export default function AdminChallenges() {
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "/admin/challenges",
@@ -92,7 +93,7 @@ export default function AdminChallenges() {
       />
 
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "/admin/challenges",

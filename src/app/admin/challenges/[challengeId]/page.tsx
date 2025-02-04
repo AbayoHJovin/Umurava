@@ -19,6 +19,7 @@ import allChallenges from "@/constants/challenges";
 import { ChallengeProps } from "@/types/challengeProps";
 import { isChallengeProps } from "@/functions/checkChallenge";
 import Link from "next/link";
+import currentUser from "@/constants/currentUser";
 
 export default function AdminChallengesDetails() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function AdminChallengesDetails() {
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "/admin/challenges",
@@ -57,7 +58,7 @@ export default function AdminChallengesDetails() {
       />
 
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "/admin/challenges",
@@ -70,52 +71,73 @@ export default function AdminChallengesDetails() {
         onCloseMobile={() => setMobileSidebarOpen(false)}
       />
 
-      <div className="ml-[20%] w-[80%]">
+      {/* <div className="ml-[20%] w-[80%]"> */}
+      <div className="ml-0 md:ml-20 lg:ml-[20%] w-full transition-all duration-300">
         <div className="border-b-2 border-gray-300">
           <TopBar
-            profileImageUrl="/sf.png"
+            profileImageUrl={currentUser.profileImage}
             onMobileSidebarOpen={() => setMobileSidebarOpen(true)}
           />{" "}
         </div>
-        <div className="flex items-center w-[96%] justify-between">
-          <div className="flex gap-6 items-center ps-10 py-6">
-            <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-4 py-4">
-              <HiArrowSmallLeft />
+        <div className="flex flex-col llg:flex-row items-start sm:items-end llg:items-center w-full sm:w-[96%] justify-between gap-4 sm:gap-0 px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center ps-4 sm:ps-10 py-4 sm:py-6">
+            {/* Arrow Button */}
+            <div className="border border-gray-200 hover:bg-gray-100 duration-500 rounded-md px-3 sm:px-4 py-3 sm:py-4 cursor-pointer">
+              <HiArrowSmallLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <p className="text-gray-600 text-xl">Go Back</p>
-            <p className="text-gray-400 text-xl">Challenges & Hackathons \</p>
-            <a href="" className="text-[#2B71F0] text-xl">
-              Design a Dashboard for Sokofund
+
+            {/* Go Back Text */}
+            <p
+              onClick={() => router.back()}
+              className="text-gray-600 text-lg sm:text-xl cursor-pointer truncate max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]"
+            >
+              Go Back
+            </p>
+
+            {/* Challenges & Hackathons Link */}
+            <Link
+              href={"/talent/challenges"}
+              className="text-gray-400 text-lg sm:text-xl truncate max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]"
+            >
+              Challenges & Hackathons
+            </Link>
+
+            {/* Challenge Name Link */}
+            <a
+              href="/admin/challenges/edit"
+              className="text-[#2B71F0] text-lg sm:text-xl font-medium truncate max-w-[150px] sm:max-w-[200px] md:max-w-[250px] lg:max-w-[300px]"
+            >
+              {challenge?.challengeName}
             </a>
           </div>
-          <div className="flex items-center gap-6">
-            <div className="flex gap-2 items-center text-xl text-gray-500">
-              <CiSearch />
+          <div className="flex items-center gap-4 sm:gap-6 pb-4 sm:pb-0">
+            <div className="flex gap-2 items-center text-lg sm:text-xl text-gray-500">
+              <CiSearch className="w-5 h-5 sm:w-6 sm:h-6" />
               <p>Search</p>
             </div>
-            <div className="flex gap-2 items-center text-xl text-gray-500">
-              <VscListFilter />
+            <div className="flex gap-2 items-center text-lg sm:text-xl text-gray-500">
+              <VscListFilter className="w-5 h-5 sm:w-6 sm:h-6" />
               <p>Filter</p>
             </div>
           </div>
         </div>
-        <div className="bg-[#F9FAFB] py-12 ps-10 flex gap-12 border-t-2 border-gray-200">
-          <div className="w-[55%] border-2 border-gray-200 rounded-xl py-10 px-10 space-y-6">
+        <div className="bg-[#F9FAFB] py-12 ps-1 llg:ps-10 flex flex-col mx-5 llg:mx-2 llg:flex-row gap-12 border-t-2 border-gray-200">
+          <div className=" w-full llg:w-[55%] border-2 border-gray-200 rounded-xl p-5 md:py-10 md:px-10 space-y-6">
             <div className="bg-[#2B71F0] rounded-xl flex justify-center items-center h-[350px]">
               <Image
-                src="/images/logo.png"
+                src="/logo.png"
                 alt="Umurava logo"
                 width={100}
                 height={100}
               />
-              <p className="text-2xl font-bold text-white">Umurava</p>
             </div>
             <div>
               <ChallengeDetails challenge={challenge || null} />
             </div>
           </div>
 
-          <div className="w-[38%] space-y-12">
+          <div className="w-full llg:w-[38%] space-y-12">
+            {/* <div className="bg-[#F9FAFB] py-12 ps-1 w-full llg:ps-10 flex flex-col mx-5 llg:mx-2 llg:flex-row gap-12 border-t-2 border-gray-200"> */}
             <div className="border-2 border-gray-200 rounded-xl px-8 py-10 space-y-6">
               <h1 className="text-2xl text-gray-800 font-bold">
                 Key Instructions:
@@ -128,38 +150,38 @@ export default function AdminChallengesDetails() {
                 <Instructions
                   icon={<IoMailOutline size={30} />}
                   title="talent@umurava.africa"
-                  description="Contact Email "
+                  description="Contact Email"
                 />
                 <Instructions
                   icon={<BiBriefcase size={30} />}
-                  title="Web Design"
+                  title={challenge?.challengeCategory || ""}
                   description="Challenge Category"
                 />
                 <Instructions
                   icon={<FaRegCalendarAlt size={30} />}
-                  title="7 Days"
+                  title={challenge?.challengeTimeline || ""}
                   description="Duration"
                 />
                 <Instructions
                   icon={<AiOutlineDollar size={30} />}
-                  title="$150-$400"
+                  title={challenge?.challengePrize || ""}
                   description="Money Prize"
                 />
               </div>
-              <div className="py-6 flex gap-8 ">
-                <button className="bg-red-500 hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]">
+              <div className="py-6 flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8">
+                <button className="bg-red-500 hover:bg-red-700 transition duration-300 rounded-xl px-6 py-4 text-white text-lg font-medium w-full sm:w-auto sm:px-10 sm:py-6">
                   Delete
                 </button>
                 <Link
                   href={`/admin/challenges/${challengeId}/edit`}
-                  className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]"
+                  className="bg-[#2B71F0] hover:bg-blue-700 transition duration-300 rounded-xl px-6 py-4 text-white text-lg font-medium w-full sm:w-auto sm:px-10 sm:py-6 text-center"
                 >
                   Edit
                 </Link>
               </div>
             </div>
             <div className="border-2 border-gray-200 rounded-xl px-8">
-              <div className="border-b-2 border-gray-100 mx-[-2rem] w-[113%] ps-8 flex items-center gap-3 py-8">
+              <div className="border-b-2 border-gray-100 mx-[-2rem] w-[113%] ps-8 flex flex-col sssm:flex-row items-center gap-3 py-8">
                 <p className="text-2xl text-gray-700 font-bold ">
                   Participants
                 </p>
@@ -210,13 +232,13 @@ const Instructions: React.FC<{
   description: string;
 }> = ({ icon, title, description }) => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4" title={title}>
       <div className="bg-[#D0E0FC] text-[#2B71F0] rounded-full px-3 py-3">
         {icon}
       </div>
-      <div>
-        <p className="text-2xl font-semibold text-gray-800">{title}</p>
-        <p className="text-xl text-gray-600">{description}</p>
+      <div className="flex-1 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl truncate">
+        <p className="text-2xl font-semibold text-gray-800 truncate">{title}</p>
+        <p className="text-xl text-gray-600 truncate">{description}</p>
       </div>
     </div>
   );

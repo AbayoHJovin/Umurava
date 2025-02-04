@@ -6,7 +6,7 @@ interface ChallengeDetailsProps {
 
 export default function ChallengeDetails({ challenge }: ChallengeDetailsProps) {
   if (!challenge) {
-    return <div>No challenge exists</div>;
+    return <div>Loading...</div>;
   }
   return (
     <div className="space-y-6 pe-6">

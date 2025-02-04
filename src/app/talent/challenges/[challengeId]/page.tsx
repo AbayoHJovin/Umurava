@@ -29,11 +29,10 @@ export default function Details() {
         (ch) => ch.challengeId === challengeId
       );
 
-      // Check if the found challenge matches ChallengeProps
       if (oneChallenge && isChallengeProps(oneChallenge)) {
         setChallenge(oneChallenge);
       } else {
-        setChallenge(null); // Fallback if no valid challenge is found
+        setChallenge(null);
       }
     }
   }, [challengeId]);
