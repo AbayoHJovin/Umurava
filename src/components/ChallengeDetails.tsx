@@ -1,103 +1,84 @@
+import { ChallengeProps } from "@/types/challengeProps";
+
 interface ChallengeDetailsProps {
-    projectName: string;
-    description: string;
+  challenge: ChallengeProps | null;
+}
+
+export default function ChallengeDetails({ challenge }: ChallengeDetailsProps) {
+  if (!challenge){
+    return <div>No challenge exists</div>;
   }
-  
-  export default function ChallengeDetails({
-    projectName,
-    description,
-  }: ChallengeDetailsProps) {
     return (
       <div className="space-y-6 pe-6">
         <h1 className="text-2xl font-semibold text-gray-800">
-          Project Brief : {projectName}
+          Project Brief : {challenge.challengeName}
         </h1>
-        <p className="text-gray-600 text-xl">{description}</p>
+        <p className="text-gray-600 text-xl">
+          {challenge.challengeDescription}
+        </p>
         <p className="text-2xl font-semibold text-gray-800">Task:</p>
         <ChallengeDetailsItems
-          productRequirements={[
-            "UX research to understand Project Requirements",
-            "Understanding User Needs",
-            "Understanding Business Goals",
-            "Determine interaction between users",
-            "Requirements Catalog",
-          ]}
-          productDesign={[
-            "User Interface Design for each step",
-            "Creating wireframes to outline the basic structure and layout of the web and mobile app.",
-            "Designing visually appealing and user-friendly interfaces for the web and mobile apps focusing on usability and user experience.",
-            "Ensuring the web application works seamlessly across web, mobile, and tablet devices.",
-            "Provide a feedback session for in-development guidance",
-          ]}
-          deliverables={[
-            "Requirements Catalog and User Interaction Diagram",
-            "User Interface Mockups",
-            "Payroll and HR System Design Completed",
-          ]}
+          productRequirements={challenge.challegeRequirements}
+          productDesign={challenge.productDesign}
+          deliverables={challenge.derivables}
+          challengeNote={challenge.note}
         />
       </div>
     );
-  }
-  
-  const ChallengeDetailsItems: React.FC<{
-    productRequirements: string[];
-    productDesign: string[];
-    deliverables: string[];
-  }> = ({ productRequirements, productDesign, deliverables }) => {
-    return (
-      <div className="space-y-6">
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold text-gray-800">
-            Product Requirements
-          </h1>
-          <div>
-            {productRequirements.map((item, index) => (
-              <ul key={index} className="list-disc list-inside">
-                <li className="list-item text-gray-600 text-xl">{item}</li>
-              </ul>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold text-gray-800">
-            Product Design:
-          </h1>
-          <div>
-            {productDesign.map((item, index) => (
-              <ul key={index} className="list-disc list-inside">
-                <li className="list-item text-gray-600 text-xl">{item}</li>
-              </ul>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold text-gray-800">Deliverables:</h1>
-          <div>
-            {deliverables.map((item, index) => (
-              <ul key={index} className="list-disc list-inside">
-                <li className="list-item text-gray-600 text-xl">{item}</li>
-              </ul>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold text-gray-800">Deliverables:</h1>
-          <ul className="list-disc list-inside">
-            <li className="list-item text-gray-600 text-xl">
-              The Product Designer will provide all documents and deliverables to
-              the client before the review meetings
-            </li>
-          </ul>
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold text-gray-800">NOTE:</h1>
-          <ul className="list-disc list-inside">
-            <li className="list-item text-gray-600 text-xl">
-              Find Product Requirements Summary and Features Description for Saway
-              Pay <a className="underline" href="">HERE</a>
-            </li>
-          </ul>
+}
+
+const ChallengeDetailsItems: React.FC<{
+  productRequirements: string[];
+  productDesign: string[];
+  deliverables: string[];
+  challengeNote: string[];
+}> = ({ productRequirements, productDesign, deliverables, challengeNote }) => {
+  return (
+    <div className="space-y-6">
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold text-gray-800">
+          Product Requirements
+        </h1>
+        <div>
+          {productRequirements.map((item, index) => (
+            <ul key={index} className="list-disc list-inside">
+              <li className="list-item text-gray-600 text-xl">{item}</li>
+            </ul>
+          ))}
         </div>
       </div>
-    );
-  };
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold text-gray-800">
+          Product Design:
+        </h1>
+        <div>
+          {productDesign.map((item, index) => (
+            <ul key={index} className="list-disc list-inside">
+              <li className="list-item text-gray-600 text-xl">{item}</li>
+            </ul>
+          ))}
+        </div>
+      </div>
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold text-gray-800">Deliverables:</h1>
+        <div>
+          {deliverables.map((item, index) => (
+            <ul key={index} className="list-disc list-inside">
+              <li className="list-item text-gray-600 text-xl">{item}</li>
+            </ul>
+          ))}
+        </div>
+      </div>
+      <div className="space-y-4">
+        <h1 className="text-2xl font-semibold text-gray-800">NOTE:</h1>
+        <div>
+          {challengeNote.map((note, index) => (
+            <ul key={index} className="list-disc list-inside">
+              <li className="list-item text-gray-600 text-xl">{note}</li>
+            </ul>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
