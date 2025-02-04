@@ -117,7 +117,7 @@ export default function Challenges({
   challengeImage,
 }: ChallengesProps) {
   return (
-    <div className="border-2 border-gray-200 rounded-xl px-6 ">
+    <div className="border-2 border-gray-200 rounded-xl px-6 w-full ">
       <div className="space-y-6 border-b-2 border-gray-200 py-6 ">
         {/* Image Section */}
         <div className="relative w-full h-[200px] mb-4 rounded-lg overflow-hidden bg-gray-100">
@@ -142,6 +142,7 @@ export default function Challenges({
         </div>
 
         <Link
+          title={challengeName}
           href={`challenges/details/${challengeId}`}
           className="text-2xl font-semibold text-gray-800 truncate block overflow-hidden whitespace-nowrap"
         >
@@ -177,7 +178,7 @@ export default function Challenges({
 
 const SkillsButton: React.FC<{ skill: string }> = ({ skill }) => {
   return (
-    <button className="border-2 border-[#2B71F0] py-2 px-2 rounded-2xl text-[#2B71F0] font-medium ">
+    <button title={skill} className="border-2 border-[#2B71F0] py-2 px-2 rounded-2xl text-[#2B71F0] font-medium truncate max-w-[100px]">
       {skill}
     </button>
   );

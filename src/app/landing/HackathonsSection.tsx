@@ -19,7 +19,7 @@ export default function HackathonsSection() {
             part of Africa's largest workforce of digital professionals
           </span>
         </h1>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-5 xmd:gap-0 lg:gap-10 my-10">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 xmd:gap-0 lg:gap-10 my-10">
           {allChallenges.slice(0, 3).map((challenge, index) => (
             <div className="w-[25%]" key={index}>
               <ChallengeComponent
