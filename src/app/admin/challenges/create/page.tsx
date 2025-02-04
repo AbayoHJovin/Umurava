@@ -86,13 +86,13 @@ export default function AdminEditChallengesDetails() {
               onClick={() => router.back()}
               className="text-gray-600 text-xl truncate max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
             >
-              Go Back
+              Go Back /
             </p>
             <Link
               href={"/talent/challenges"}
               className="text-gray-400 text-xl truncate max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl"
             >
-              Challenges & Hackathons
+              Challenges & Hackathons /
             </Link>
             <a
               href="/admin/challenges/create"
@@ -119,7 +119,6 @@ export default function AdminEditChallengesDetails() {
                 </label>
                 <input
                   type="text"
-                  value={"Design a Dashboard For SoKofund"}
                   className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                 />
               </div>
@@ -133,7 +132,6 @@ export default function AdminEditChallengesDetails() {
                   </label>
                   <input
                     type="text"
-                    value={"24/12/2024"}
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
@@ -146,7 +144,6 @@ export default function AdminEditChallengesDetails() {
                   </label>
                   <input
                     type="text"
-                    value={"7 Days"}
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
@@ -161,7 +158,6 @@ export default function AdminEditChallengesDetails() {
                   </label>
                   <input
                     type="text"
-                    value={"$150"}
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
@@ -174,7 +170,6 @@ export default function AdminEditChallengesDetails() {
                   </label>
                   <input
                     type="text"
-                    value={"talent@umurava.africa"}
                     className="border-2 border-gray-100 rounded-xl w-full px-4 py-6 outline-none focus:border-red-300 text-xl"
                   />
                 </div>
@@ -187,9 +182,6 @@ export default function AdminEditChallengesDetails() {
                   Project Brief
                 </label>
                 <textarea
-                  value={
-                    "A Fintech company that is developing a Digital Financial Platform designed for businesses and their workforce in Africa is partnering with Umurava to run a Skills Challenge for Product Design. This Fintech Company offers Payroll Management System to Employers and Embedded Financial services and products to Employees and Gig Workers across Africa."
-                  }
                   name="projectBrief"
                   id="projectBrief"
                   rows={7}

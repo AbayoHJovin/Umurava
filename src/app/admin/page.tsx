@@ -127,26 +127,7 @@ export default function AdminDashboard() {
               <SlArrowRight />
             </div>
           </div>
-          {/* <div className="py-5 flex flex-wrap gap-5">
-            {allChallenges.map((challenge) => (
-              <div
-                key={challenge.challengeId}
-                className="max-w-[400px]"
-              >
-                <Challenges
-                  challengeImage={challenge.challengeImage}
-                  challengeId={challenge.challengeId}
-                  challengeName={challenge.challengeName}
-                  challengeStatus={challenge.challengeStatus}
-                  challengeSkills={challenge.challengeSkills}
-                  challengeTimeline={challenge.challengeTimeline}
-                  challengeComponentWidth="100"
-                />
-              </div>
-            ))}
-          </div> */}
-
-          <div className="py-10 grid grid-cols-1 sm:grid-cols-2 xmd:grid-cols-3 gap-6">
+                    <div className="py-10 grid grid-cols-1 sm:grid-cols-2 xmd:grid-cols-3 gap-6">
             {allChallenges.map((challenge, index) => (
               <Challenges
               detailsUrl="/admin/challenges"
