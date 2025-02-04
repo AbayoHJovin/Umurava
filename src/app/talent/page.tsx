@@ -10,12 +10,13 @@ import Link from "next/link";
 import ChallengeComponent from "@/components/ChallengeComponent";
 import { useState } from "react";
 import allChallenges from "@/constants/challenges";
+import currentUser from "@/constants/currentUser";
 export default function Home() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/talent",
           "/talent/challenges",
@@ -26,7 +27,7 @@ export default function Home() {
       />
 
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
         "/talent",
           "/talent/challenges",
@@ -41,14 +42,14 @@ export default function Home() {
 
       <div className="flex-1 ml-0 md:ml-20 lg:ml-[20%] transition-all duration-300 items-center">
         <TopBar
-          profileImageUrl="/sf.png"
+          profileImageUrl={currentUser.profileImage}
           onMobileSidebarOpen={() => setMobileSidebarOpen(true)}
         />
         <div className="bg-[#F9FAFB] py-6 px-10">
           <div className="flex justify-between items-center flex-wrap">
             <div>
               <h1 className="text-3xl text-gray-800 font-bold">
-                Welcome back Hilaire,
+                Welcome back {currentUser.username},
               </h1>
               <p className="text-gray-500 font-normal text-xl">
                 Build Work Experience Through Skills Challenges

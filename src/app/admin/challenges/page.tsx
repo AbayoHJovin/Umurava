@@ -116,7 +116,7 @@ export default function AdminChallenges() {
               Join a challenge or a hackathon to gain valuable work experience,
             </p>
           </div>
-          <div className="flex gap-4 items-center border-b-2 border-gray-100 py-6">
+          <div className="flex flex-col xlg:flex-row gap-4 items-start xlg:items-center border-b-2 border-gray-100 py-6">
             <div className="py-6 border-b-2 border-gray-100">
               <div className="hidden llg:flex gap-4">
                 {categories.map((item, index) => (
@@ -176,7 +176,7 @@ export default function AdminChallenges() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 ssm:grid-cols-2 md:grid-cols-3 xlg:grid-cols-3 gap-5 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xmd:grid-cols-3 gap-5 mt-6">
             {filteredChallenges.map((challenge, index) => (
               <ChallengeComponent
               detailsUrl="/admin/challenges"
@@ -190,7 +190,7 @@ export default function AdminChallenges() {
               />
             ))}
           </div>
-          <div className="flex justify-between items-center py-10">
+          <div className="flex flex-col md:flex-row justify-between items-center py-10 gap-4">
             <button className="text-[#98A2B3] rounded-xl py-3 px-12 bg-white">
               Previous
             </button>

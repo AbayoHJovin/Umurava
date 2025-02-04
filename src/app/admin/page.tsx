@@ -9,12 +9,13 @@ import AdminChallengeCard from "@/components/adminChallengeCard";
 import { TiDocumentText } from "react-icons/ti";
 import { useState } from "react";
 import allChallenges from "@/constants/challenges";
+import currentUser from "@/constants/currentUser";
 export default function AdminDashboard() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
     <div className={`flex ${workSans.className}`}>
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "admin/challenges",
@@ -25,7 +26,7 @@ export default function AdminDashboard() {
       />
 
       <SideBar
-        profileImageUrl="/sf.png"
+        profileImageUrl={currentUser.profileImage}
         href={[
           "/admin",
           "admin/challenges",
@@ -37,23 +38,24 @@ export default function AdminDashboard() {
         mobileSidebarOpen={mobileSidebarOpen}
         onCloseMobile={() => setMobileSidebarOpen(false)}
       />
-      <div className="ml-[20%] w-[80%]">
+      {/* <div className="ml-[20%] "> */}
+      <div className="ml-0 md:ml-20 lg:ml-[20%] w-full transition-all duration-300">
         <TopBar
-          profileImageUrl="/images/profile.png"
+          profileImageUrl={currentUser.profileImage}
           onMobileSidebarOpen={() => setMobileSidebarOpen(true)}
         />
         <div className="bg-[#F9FAFB] py-6 ps-10 pe-10">
           <div className="flex justify-between">
             <div>
               <h1 className="text-3xl text-gray-800 font-bold">
-                Welcome back Hilaire,{" "}
+                Welcome back {currentUser.username},{" "}
               </h1>
               <p className="text-gray-500 font-normal text-xl">
                 Build Work Experience Through Skills Challenges
               </p>
             </div>
           </div>
-          <div className="flex gap-6 py-6">
+          <div className="flex flex-col xmd:flex-row gap-6 py-6 w-full">
             <AdminChallengeCard
               // width="100"
               title="Total Challenges"
@@ -79,7 +81,7 @@ export default function AdminDashboard() {
               }
             />
           </div>
-          <div className="flex  gap-6 py-6">
+          <div className="flex flex-col llg:flex-row gap-6 py-6">
             <AdminChallengeCard
               // width="100"
               title="Total Challenges"
@@ -125,7 +127,26 @@ export default function AdminDashboard() {
               <SlArrowRight />
             </div>
           </div>
-          <div className="py-10 flex items-center gap-16 flex-wrap">
+          {/* <div className="py-5 flex flex-wrap gap-5">
+            {allChallenges.map((challenge) => (
+              <div
+                key={challenge.challengeId}
+                className="max-w-[400px]"
+              >
+                <Challenges
+                  challengeImage={challenge.challengeImage}
+                  challengeId={challenge.challengeId}
+                  challengeName={challenge.challengeName}
+                  challengeStatus={challenge.challengeStatus}
+                  challengeSkills={challenge.challengeSkills}
+                  challengeTimeline={challenge.challengeTimeline}
+                  challengeComponentWidth="100"
+                />
+              </div>
+            ))}
+          </div> */}
+
+          <div className="py-10 grid grid-cols-1 sm:grid-cols-2 xmd:grid-cols-3 gap-6">
             {allChallenges.map((challenge, index) => (
               <Challenges
               detailsUrl="/admin/challenges"
@@ -136,7 +157,7 @@ export default function AdminDashboard() {
                 challengeStatus={challenge.challengeStatus}
                 challengeSkills={challenge.challengeSkills}
                 challengeTimeline={challenge.challengeTimeline}
-                challengeComponentWidth="30"
+                challengeComponentWidth="100"
               />
             ))}
           </div>

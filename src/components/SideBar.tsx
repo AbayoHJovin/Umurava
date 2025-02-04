@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import currentUser from "@/constants/currentUser";
 
 interface SidebarItemProps {
   profileImageUrl: string | StaticImport;
@@ -117,8 +118,8 @@ export default function SideBar({
               className="rounded-full object-cover"
             />
             <section className="text-start">
-              <p className="font-medium truncate">Hilaire Sh</p>
-              <p className="text-sm truncate">hilaire@uidesign</p>
+              <p className="font-medium truncate">{currentUser.username}</p>
+              <p className="text-sm truncate">{currentUser.email}</p>
             </section>
           </div>
           <GoSignOut className="font-bold" size={30} />

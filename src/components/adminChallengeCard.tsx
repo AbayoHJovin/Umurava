@@ -17,7 +17,7 @@ export default function AdminChallengeCard({
 }: adminChallengeCardProps) {
   return (
     <div
-      className={`border-2 border-gray-200 rounded-xl w-[100%] py-4 px-6 space-y-6`}
+      className={`border-2 border-gray-200 rounded-xl w-full py-4 px-6 space-y-6`}
     >
       <div className="flex items-center gap-2 justify-end ">
         <p className="text-gray-400">{time}</p>
