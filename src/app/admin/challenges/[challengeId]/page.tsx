@@ -13,7 +13,7 @@ import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import { VscListFilter } from "react-icons/vsc";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import allChallenges from "@/constants/challenges";
 import { ChallengeProps } from "@/types/challengeProps";
@@ -25,6 +25,7 @@ export default function AdminChallengesDetails() {
   const [challenge, setChallenge] = useState<ChallengeProps | null>(null);
   const router = useRouter();
   const params = useParams();
+  const path = usePathname();
   const challengeId = params.challengeId as string;
 
   useEffect(() => {
@@ -149,7 +150,10 @@ export default function AdminChallengesDetails() {
                 <button className="bg-red-500 hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]">
                   Delete
                 </button>
-                <Link href={`${router.push}/edit`} className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]">
+                <Link
+                  href={`/admin/challenges/${challengeId}/edit`}
+                  className="bg-[#2B71F0] hover:bg-blue-700 duration-500 rounded-xl px-10 py-6 text-white text-xl font-medium w-[50%]"
+                >
                   Edit
                 </Link>
               </div>
