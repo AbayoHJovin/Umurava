@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.1",
     "@reduxjs/toolkit": "^2.5.1",
+    "axios": "^1.7.9",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
